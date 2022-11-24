@@ -7,7 +7,6 @@ STARTING_YEAR = 1990
 json_final = {}
 
 for i in data:
-    print("entrei")
     lista = []
     for k,v in i.items():
         d = {}
