@@ -1,6 +1,6 @@
 import json
 
-data = json.load(open('data/consumo/renovaveis/renovaveis_consumo.json', 'r'))
+data = json.load(open('data/consumo_setor/servicos/servicos_consumo_setor.json', 'r'))
 l = []
 STARTING_YEAR = 1990
 
@@ -19,5 +19,5 @@ for i in data:
 
 print(json_final)
 
-with open('data/consumo/renovaveis/renovaveis_consumo-2.json', 'w') as outfile:
+with open('data/consumo_setor/servicos/servicos_consumo_setor-2.json', 'w') as outfile:
     outfile.write(str(json_final))
