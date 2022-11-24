@@ -1,27 +1,17 @@
 import json
 
-data = json.load(open('data/prod/total_producao-2.json', 'r'))
+data = json.load(open('data/consumo/renovaveis/renovaveis_consumo.json', 'r'))
 l = []
 STARTING_YEAR = 1990
 
-
-#for i in data:
-#    d = {}
-#    for k, v in i.items():
-#        k = k.split(" - ")[1]
-#        d[k] = v
-#    l.append(d)
-
-
 json_final = {}
-
 
 for i in data:
     print("entrei")
     lista = []
     for k,v in i.items():
         d = {}
-        d["Country"] = k
+        d["Country"] = k.split(" - ")[1]
         d["Energy"] = v
         lista.append(d)        
     json_final[str(STARTING_YEAR)] = lista
@@ -29,5 +19,5 @@ for i in data:
 
 print(json_final)
 
-with open('data/prod/total_producao-2-2.json', 'w') as outfile:
+with open('data/consumo/renovaveis/renovaveis_consumo-2.json', 'w') as outfile:
     outfile.write(str(json_final))

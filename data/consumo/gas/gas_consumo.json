@@ -1,0 +1,3784 @@
+{
+    "1990": [
+        {
+            "Country": "Alemanha",
+            "Energy": 36808.3
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 2675.8
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 6400.6
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1943.7
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 866.2
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1121.9
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3914.5
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 714.5
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 3950.5
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 257.7
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 957.7
+        },
+        {
+            "Country": "França",
+            "Energy": 22019
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 0
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5647.9
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 568.5
+        },
+        {
+            "Country": "Itália",
+            "Energy": 28725.3
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 697.8
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 1483.4
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 419.9
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 21439.6
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 5767.4
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 0
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 4243.9
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 19854
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 334.4
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 40231.7
+        }
+    ],
+    "1991": [
+        {
+            "Country": "Alemanha",
+            "Energy": 40311.4
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 2884.7
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 6738.9
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1619.8
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 837.6
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1259.1
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3271.1
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 665.7
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 4305.5
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 289.6
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 1035.7
+        },
+        {
+            "Country": "França",
+            "Energy": 25193.7
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 0
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5729.2
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 650.2
+        },
+        {
+            "Country": "Itália",
+            "Energy": 31454.6
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 648.6
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 1679.2
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 438
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 23896.1
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 5359.2
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 0
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 3976.7
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 14973.7
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 311.6
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 44307.3
+        }
+    ],
+    "1992": [
+        {
+            "Country": "Alemanha",
+            "Energy": 41113.3
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 3000.2
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 6782.3
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1366.4
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 764.6
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1301.5
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3641.2
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 559.7
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 4704.7
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 215.3
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 1078.1
+        },
+        {
+            "Country": "França",
+            "Energy": 25429.7
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 0
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 4924.8
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 666.7
+        },
+        {
+            "Country": "Itália",
+            "Energy": 31002.1
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 590.8
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 991.6
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 456.2
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 22693
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 5328.5
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 0
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 4476.1
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5302
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 299.5
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 42930.8
+        }
+    ],
+    "1993": [
+        {
+            "Country": "Alemanha",
+            "Energy": 43753.4
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 3058.4
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 7139.1
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1008
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 857.9
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1475.6
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3470.4
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 554.1
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 5010.9
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 159.4
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 1038
+        },
+        {
+            "Country": "França",
+            "Energy": 25537.5
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 0
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5610.6
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 762.3
+        },
+        {
+            "Country": "Itália",
+            "Energy": 31967.1
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 435.4
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 531.5
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 474.4
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 23281.2
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 5584
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 0
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 4574.1
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5522.7
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 347.7
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 43801.6
+        }
+    ],
+    "1994": [
+        {
+            "Country": "Alemanha",
+            "Energy": 44743.7
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 3017.6
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 7283.6
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1223.7
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 878.8
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1509
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3240.9
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 553.7
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 5014.7
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 156
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 1165.7
+        },
+        {
+            "Country": "França",
+            "Energy": 25322.5
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 0
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5621.3
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 770.9
+        },
+        {
+            "Country": "Itália",
+            "Energy": 30999
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 345.4
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 528.4
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 472.6
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 22005.4
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 5805.1
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 0
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 4575.4
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 8408.9
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 349.8
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 44050.6
+        }
+    ],
+    "1995": [
+        {
+            "Country": "Alemanha",
+            "Energy": 48213.4
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 3416.3
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 7850.6
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1553.9
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 897.9
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1660.9
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3538.8
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 575.5
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 6425.3
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 179.9
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 1002.1
+        },
+        {
+            "Country": "França",
+            "Energy": 25862.7
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 0
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6102.8
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 795.6
+        },
+        {
+            "Country": "Itália",
+            "Energy": 33657.2
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 366.4
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 509.9
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 514.4
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 22773.1
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 6063.7
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 0
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5147
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 9487.2
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 368.9
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 45495.4
+        }
+    ],
+    "1996": [
+        {
+            "Country": "Alemanha",
+            "Energy": 54288.4
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 3679.7
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 8878.4
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1486.5
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 987.3
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1786.2
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3843.2
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 598.6
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 6893.1
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 189.8
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 1001.5
+        },
+        {
+            "Country": "França",
+            "Energy": 28708.2
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 3.5
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6845.3
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 869.7
+        },
+        {
+            "Country": "Itália",
+            "Energy": 34726.4
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 365.8
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 458.1
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 564
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 25649.2
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 6110.7
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 0
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5780.4
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 9007
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 406.3
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 50882.1
+        }
+    ],
+    "1997": [
+        {
+            "Country": "Alemanha",
+            "Energy": 51811.5
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 3685.6
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 8224.5
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1976.6
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1038.9
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1731.3
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3798.5
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 610
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 7743.1
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 190.9
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 954.6
+        },
+        {
+            "Country": "França",
+            "Energy": 28297.2
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 33.2
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6431.7
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 871
+        },
+        {
+            "Country": "Itália",
+            "Energy": 34417.9
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 331.6
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 449.7
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 583.4
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 22184.7
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 6576.4
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 43.9
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6104.7
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 7650.1
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 395.7
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 48745.4
+        }
+    ],
+    "1998": [
+        {
+            "Country": "Alemanha",
+            "Energy": 51873.2
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 3767.5
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 8661.6
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1576.1
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1068
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1724.8
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3975.9
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 626.1
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 8703.5
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 203.8
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 1231.3
+        },
+        {
+            "Country": "França",
+            "Energy": 29046.9
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 142.2
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6394.3
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 963.9
+        },
+        {
+            "Country": "Itália",
+            "Energy": 36219
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 340.3
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 421.7
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 589.8
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 21393.6
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 6376.3
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 234.2
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6189.2
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 6355.9
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 426.8
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 50270.2
+        }
+    ],
+    "1999": [
+        {
+            "Country": "Alemanha",
+            "Energy": 52158.7
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 3868.2
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 8813.1
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1129.3
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1081.9
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1747.8
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 4075.7
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 638.1
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 9632.8
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 164.1
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 1179.1
+        },
+        {
+            "Country": "França",
+            "Energy": 30325.6
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 201.4
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6440.6
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1035.8
+        },
+        {
+            "Country": "Itália",
+            "Energy": 37665.4
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 318.8
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 351
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 610.9
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 20717.5
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 6230.5
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 489.3
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6125.1
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 6341.4
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 451
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 0
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 49633
+        }
+    ],
+    "2000": [
+        {
+            "Country": "Alemanha",
+            "Energy": 52981.3
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 3953.3
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9328.9
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1387.4
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1000.6
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1667.4
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 4167.3
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 568.9
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 11819.1
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 176.9
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 908.7
+        },
+        {
+            "Country": "França",
+            "Energy": 29825.2
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 257.2
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6365.6
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1200.5
+        },
+        {
+            "Country": "Itália",
+            "Energy": 37611.4
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 328.8
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 363.1
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 604.6
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 20655.1
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 6323.2
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 790.5
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5915.4
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 6475.8
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 443.3
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 176.2
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 51369.2
+        }
+    ],
+    "2001": [
+        {
+            "Country": "Alemanha",
+            "Energy": 53933.2
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4468.9
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9643.2
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1199.8
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1103.6
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1776.7
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3993.5
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 599.8
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 13009.2
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 215
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 929.5
+        },
+        {
+            "Country": "França",
+            "Energy": 30842.4
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 318.3
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 7009
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1234.2
+        },
+        {
+            "Country": "Itália",
+            "Energy": 38749.4
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 389.7
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 394.4
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 601.9
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 21045.5
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 6765.1
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1039.8
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6450
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 6849.2
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 492.3
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 179.8
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 52032.8
+        }
+    ],
+    "2002": [
+        {
+            "Country": "Alemanha",
+            "Energy": 53914.9
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4317.3
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9736.3
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1072.7
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1051.3
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1661.7
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3784.3
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 590
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 13696.4
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 181.7
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 866.9
+        },
+        {
+            "Country": "França",
+            "Energy": 30555.9
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 347.7
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6987.7
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1197
+        },
+        {
+            "Country": "Itália",
+            "Energy": 37839.7
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 447.1
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 428.1
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 607.4
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 20254.2
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 6860.1
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1183.2
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6191.5
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 6958
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 459.1
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 137.7
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 49710.6
+        }
+    ],
+    "2003": [
+        {
+            "Country": "Alemanha",
+            "Energy": 53218.2
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4544.7
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9674.5
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1100.5
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1130.2
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1742.2
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3582.8
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 632.8
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 15321.8
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 276.7
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 856.2
+        },
+        {
+            "Country": "França",
+            "Energy": 32159.9
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 387
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 7509.1
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1277.3
+        },
+        {
+            "Country": "Itália",
+            "Energy": 40963.5
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 456.3
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 439.9
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 616.4
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 20605.6
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 7217.9
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1206.1
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6319.1
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 7629.2
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 496.9
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 182.2
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 51031.1
+        }
+    ],
+    "2004": [
+        {
+            "Country": "Alemanha",
+            "Energy": 53554.4
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4657.9
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9507
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1157.7
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1175.2
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1702.4
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3301.8
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 665.9
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 16371.7
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 264.5
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 864
+        },
+        {
+            "Country": "França",
+            "Energy": 32758.3
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 462.4
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 7429
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1350.4
+        },
+        {
+            "Country": "Itália",
+            "Energy": 38975.1
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 491.9
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 488.5
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 643.7
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 20636.9
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 7595.1
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1280.5
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6210.5
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 7378.1
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 519.1
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 213.1
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 51371.9
+        }
+    ],
+    "2005": [
+        {
+            "Country": "Alemanha",
+            "Energy": 52614.2
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4665.9
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9434.7
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1367.2
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1225.6
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1707.4
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3927.5
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 664.8
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 17653
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 263.3
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 834.1
+        },
+        {
+            "Country": "França",
+            "Energy": 33344
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 586.2
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 7687.9
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1366.3
+        },
+        {
+            "Country": "Itália",
+            "Energy": 40590.3
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 507.9
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 589.1
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 630.7
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 20020.6
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 7917.1
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1307.3
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6184.4
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 7186.4
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 509.3
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 220.4
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 49845.2
+        }
+    ],
+    "2006": [
+        {
+            "Country": "Alemanha",
+            "Energy": 53538
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4641.3
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9482.8
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1465.2
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1192.8
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1709.3
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3678.8
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 657.2
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 15158.4
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 273.5
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 883.6
+        },
+        {
+            "Country": "França",
+            "Energy": 32447.3
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 688.1
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 7065.9
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1466.6
+        },
+        {
+            "Country": "Itália",
+            "Energy": 38457.8
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 513.5
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 613.7
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 658.3
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 19418.3
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8112.6
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1339.3
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6147.5
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 7721
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 522.9
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 237.6
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 47369.7
+        }
+    ],
+    "2007": [
+        {
+            "Country": "Alemanha",
+            "Energy": 51279.9
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4394.3
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9025
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1565.9
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1195.1
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1638.3
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3497.1
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 645.2
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 15706.2
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 273.7
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 901.6
+        },
+        {
+            "Country": "França",
+            "Energy": 30874.4
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 707.8
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6076.2
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1449.4
+        },
+        {
+            "Country": "Itália",
+            "Energy": 36226.3
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 523
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 647.2
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 641.1
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 18005.1
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8137.4
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1439.8
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5876.6
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 6542.7
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 541.6
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 256
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 44964.8
+        }
+    ],
+    "2008": [
+        {
+            "Country": "Alemanha",
+            "Energy": 52595.4
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4531.3
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9286.1
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1490.6
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1260.6
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1637
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3612.8
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 640.2
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 14678.9
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 232.9
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 826.4
+        },
+        {
+            "Country": "França",
+            "Energy": 31883.7
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 810.9
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6116
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1554.7
+        },
+        {
+            "Country": "Itália",
+            "Energy": 36625.8
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 501.2
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 622.4
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 658.1
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 19190.2
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8226.7
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1445.2
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5846
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 6832.9
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 477
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 297.3
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 46352.1
+        }
+    ],
+    "2009": [
+        {
+            "Country": "Alemanha",
+            "Energy": 48911.6
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4397.8
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 8753.8
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 991.8
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1223
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1583
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2976.4
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 573.2
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 13002.5
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 184.1
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 705.9
+        },
+        {
+            "Country": "França",
+            "Energy": 30030.5
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 824
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5765.2
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1458.4
+        },
+        {
+            "Country": "Itália",
+            "Energy": 36070.8
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 432.2
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 573.6
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 616.1
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 18749.4
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8254.3
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1437.9
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5439.1
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5873
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 451.5
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 299.4
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 42144.8
+        }
+    ],
+    "2010": [
+        {
+            "Country": "Alemanha",
+            "Energy": 53993.4
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4740.6
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 10014
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1058.2
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1283.4
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1746.5
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 3491.8
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 620.4
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 14347.1
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 207.1
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 791.9
+        },
+        {
+            "Country": "França",
+            "Energy": 32006.5
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 781.6
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 6095.7
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1586.3
+        },
+        {
+            "Country": "Itália",
+            "Energy": 38499.4
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 497.7
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 618.8
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 675.2
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 21563.2
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8884.1
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1564.4
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 6088.4
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 6016.8
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 557.2
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 319.1
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 46467.4
+        }
+    ],
+    "2011": [
+        {
+            "Country": "Alemanha",
+            "Energy": 48190.4
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4551.5
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 8672.1
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1273.8
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1183.7
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1591
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2933.1
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 578.1
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 14000.5
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 203.5
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 750.3
+        },
+        {
+            "Country": "França",
+            "Energy": 30092.4
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 1082.9
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5842.7
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1502.7
+        },
+        {
+            "Country": "Itália",
+            "Energy": 35534.5
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 396.8
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 603.8
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 600.7
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 18076.3
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8537
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1643.8
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5508.4
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 6101.8
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 566.7
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 344.6
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 38616.5
+        }
+    ],
+    "2012": [
+        {
+            "Country": "Alemanha",
+            "Energy": 50299.8
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4553.4
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9292.4
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1182.2
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1050.7
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1580.4
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2821.5
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 547.3
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 14634.1
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 218.1
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 701.9
+        },
+        {
+            "Country": "França",
+            "Energy": 32011.2
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 971.4
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5060.2
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1621.1
+        },
+        {
+            "Country": "Itália",
+            "Energy": 35450.4
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 402.4
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 618
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 611.3
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 18973.9
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8762.2
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1614.9
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5386.9
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5977.4
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 594.4
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 411.2
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 42167.8
+        }
+    ],
+    "2013": [
+        {
+            "Country": "Alemanha",
+            "Energy": 52845.6
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4728.8
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9798.7
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1155.9
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 993.3
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1579.9
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2996.3
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 540.6
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 14786.3
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 250
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 704.4
+        },
+        {
+            "Country": "França",
+            "Energy": 33258
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 907.6
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5333.7
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1628.1
+        },
+        {
+            "Country": "Itália",
+            "Energy": 35222.3
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 343.6
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 552
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 601.3
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 19497.1
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8883.7
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1566.7
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5367
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5681.1
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 496.4
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 419.4
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 42686.4
+        }
+    ],
+    "2014": [
+        {
+            "Country": "Alemanha",
+            "Energy": 47428.6
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4379.5
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 8343.4
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1178.7
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 938.2
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1447.6
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2468.9
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 518.1
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 14295.5
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 223.8
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 670.8
+        },
+        {
+            "Country": "França",
+            "Energy": 27929.3
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 834.6
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5002.2
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1615.9
+        },
+        {
+            "Country": "Itália",
+            "Energy": 30902.7
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 326.7
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 522
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 574.6
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 16006.5
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8347.9
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1547.7
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 4806.8
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5466.2
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 528.7
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 416.6
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 36384.4
+        }
+    ],
+    "2015": [
+        {
+            "Country": "Alemanha",
+            "Energy": 49302.2
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4561.3
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 8945.2
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1299.7
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 977.2
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1504.6
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2480.3
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 558
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 12914.4
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 222.4
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 614.4
+        },
+        {
+            "Country": "França",
+            "Energy": 28656.9
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 968.8
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5293.4
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1711.5
+        },
+        {
+            "Country": "Itália",
+            "Energy": 32983.8
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 316.5
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 518.9
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 602.3
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 16860.2
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 8489.6
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1614.7
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5024.2
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5299.3
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 568.4
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 426.8
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 37700.1
+        }
+    ],
+    "2016": [
+        {
+            "Country": "Alemanha",
+            "Energy": 52415.6
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4728.3
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9313.2
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1300.6
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1030.6
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1527.7
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2559.7
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 598.4
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 13358.8
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 252.4
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 592.7
+        },
+        {
+            "Country": "França",
+            "Energy": 30062.3
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 1047.5
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5571.9
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1790.2
+        },
+        {
+            "Country": "Itália",
+            "Energy": 33237
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 321.3
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 551.3
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 633.1
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 17414.1
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 9225.5
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1635.5
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5284
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5203.9
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 460.5
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 422.1
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 38664.2
+        }
+    ],
+    "2017": [
+        {
+            "Country": "Alemanha",
+            "Energy": 52772.2
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4786.5
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9461.3
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1352.8
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1081.4
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1596
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2749.5
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 610.3
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 13563.5
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 229
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 625.2
+        },
+        {
+            "Country": "França",
+            "Energy": 29262.6
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 846.6
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5709.4
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1817.5
+        },
+        {
+            "Country": "Itália",
+            "Energy": 33921.5
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 328
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 569.8
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 623.5
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 17336.8
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 9185.5
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1740.8
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5529.4
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5640.4
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 355.7
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 457.7
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 37810.1
+        }
+    ],
+    "2018": [
+        {
+            "Country": "Alemanha",
+            "Energy": 53196.1
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4655.6
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9527.5
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1301.8
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1076
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1569.7
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2648.1
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 597.6
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 14323
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 251.6
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 600
+        },
+        {
+            "Country": "França",
+            "Energy": 28966.6
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 811.6
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5570.1
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1957.7
+        },
+        {
+            "Country": "Itália",
+            "Energy": 33628.6
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 344.5
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 596.9
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 623.4
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 17146.4
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 9268.4
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1803.9
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5166.2
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5755.4
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 465
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 423.3
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 39474.7
+        }
+    ],
+    "2019": [
+        {
+            "Country": "Alemanha",
+            "Energy": 52364.1
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4782
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9461.4
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1145.6
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1094.6
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1544.1
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2564.9
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 591.7
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 14456
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 241.1
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 692.6
+        },
+        {
+            "Country": "França",
+            "Energy": 28278.9
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 896.5
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5481.4
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1968.5
+        },
+        {
+            "Country": "Itália",
+            "Energy": 33042.6
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 323.6
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 584.1
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 623.4
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 16509.2
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 9323.2
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1814.9
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5187.3
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5626.2
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 475.2
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 462.3
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 39311.4
+        }
+    ],
+    "2020": [
+        {
+            "Country": "Alemanha",
+            "Energy": 51812.6
+        },
+        {
+            "Country": "Áustria",
+            "Energy": 4645.8
+        },
+        {
+            "Country": "Bélgica",
+            "Energy": 9088.1
+        },
+        {
+            "Country": "Bulgária",
+            "Energy": 1176.5
+        },
+        {
+            "Country": "Chipre",
+            "Energy": 0
+        },
+        {
+            "Country": "Croácia",
+            "Energy": 1100.1
+        },
+        {
+            "Country": "Dinamarca",
+            "Energy": 1508.2
+        },
+        {
+            "Country": "Eslováquia",
+            "Energy": 2427.1
+        },
+        {
+            "Country": "Eslovénia",
+            "Energy": 582
+        },
+        {
+            "Country": "Espanha",
+            "Energy": 13815
+        },
+        {
+            "Country": "Estónia",
+            "Energy": 245.1
+        },
+        {
+            "Country": "Finlândia",
+            "Energy": 694.3
+        },
+        {
+            "Country": "França",
+            "Energy": 26465.6
+        },
+        {
+            "Country": "Grécia",
+            "Energy": 1097.9
+        },
+        {
+            "Country": "Hungria",
+            "Energy": 5693.2
+        },
+        {
+            "Country": "Irlanda",
+            "Energy": 1953.5
+        },
+        {
+            "Country": "Itália",
+            "Energy": 31807.2
+        },
+        {
+            "Country": "Letónia",
+            "Energy": 322.9
+        },
+        {
+            "Country": "Lituânia",
+            "Energy": 582.8
+        },
+        {
+            "Country": "Luxemburgo",
+            "Energy": 564.4
+        },
+        {
+            "Country": "Malta",
+            "Energy": 0
+        },
+        {
+            "Country": "Países Baixos",
+            "Energy": 15896.3
+        },
+        {
+            "Country": "Polónia",
+            "Energy": 9235.7
+        },
+        {
+            "Country": "Portugal",
+            "Energy": 1740.3
+        },
+        {
+            "Country": "República Checa",
+            "Energy": 5158.4
+        },
+        {
+            "Country": "Roménia",
+            "Energy": 5846.9
+        },
+        {
+            "Country": "Suécia",
+            "Energy": 471.1
+        },
+        {
+            "Country": "Islândia",
+            "Energy": 0
+        },
+        {
+            "Country": "Noruega",
+            "Energy": 396.5
+        },
+        {
+            "Country": "Reino Unido",
+            "Energy": 0
+        }
+    ]
+}
