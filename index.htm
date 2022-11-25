@@ -1,169 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Mercator projection</title>
-		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<!-- <script src="//d3js.org/topojson.v1.min.js"></script> -->
-		<style type="text/css">
 
+<head>
+	<meta charset="utf-8">
+	<title>Mercator projection</title>
+	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="mapLegend.js"></script>
+	<script src="form.js"></script>
+	<!-- <script src=" //cdnjs.cloudflare.com/ajax/libs/d3-legend/1.1.0/d3-legend.js"></script> -->
+	<!-- <script src="//d3js.org/topojson.v1.min.js"></script> -->
+	<style type="text/css">
+		svg {
+			background-color: white;
+		}
 
-			svg {
-				background-color: white;
-			}
+		h1 {
+			color: rgb(115, 115, 115);
+			font-size: 18px;
+			font-family: sans-serif;
+			font-weight: bold;
+			margin: 0;
+			padding-bottom: 10px;
 
-			h1 {
-				color: rgb(115, 115, 115);
-				font-size: 18px;
-				font-family: sans-serif;
-				font-weight: bold;
-				margin: 0;
-				padding-bottom: 10px;
+		}
 
-			}
+		path:hover {
+			fill: rgba(255, 0, 0, 0.2);
+			cursor: pointer;
+		}
 
-				#container {
-				width: 800px;
-				margin-left: auto;
-				margin-right: auto;
-				margin-top: 20px;
-				padding: 20px;
-				background-color: white;
-				box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
-			}
+		#container {
+			width: 60%;
+			margin-left: auto;
+			margin-right: 20px;
+			float: right;
+			margin-top: 20px;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+		}
 
-			path:hover {
-				fill: rgba(255, 0, 0, 0.2);
-				cursor:pointer;
-			}
+		#form {
+			width: 30%;
+			margin-left: 20px;
+			margin-right: 20px;
+			float: left;
+			margin-top: 20px;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+		}
 
+		#list-puntate {
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+			float: left;
+			margin-top: 20px;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+		}
 
+		#dataSelect {
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+			float: left;
+			margin-top: 20px;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+		}
+	</style>
+</head>
 
-		</style>
-	</head>
-	<body>
-
-
+<body>
 	<div id="container">
 		<h1>World map centered on European countries</h1>
-
 	</div>
-		
-
-		<script type="text/javascript">
-
-
-
-			//Width and height
-			var w = 800;
-			var h = 600;
-
-			//Define map projection
-
-
-			var projection = d3.geo.mercator() //utiliser une projection standard pour aplatir les pôles, voir D3 projection plugin
-								   .center([ 13, 52 ]) //comment centrer la carte, longitude, latitude
-								   .translate([ w/2, h/2 ]) // centrer l'image obtenue dans le svg
-								   .scale([ w/1.5 ]); // zoom, plus la valeur est petit plus le zoom est gros 
-
-			//Define path generator
-			var path = d3.geo.path()
-							 .projection(projection);
-
-
-			//Create SVG
-			var svg = d3.select("#container")
-						.append("svg")
-						.attr("width", w)
-						.attr("height", h);
-
-			//Load in GeoJSON data
-			d3.json("europe_features.json", function(json) {
-				
-				//Bind data and create one path per GeoJSON feature
-				svg.selectAll("path")
-				   .data(json.features)
-				   .enter()
-				   .append("path")
-				   .attr("d", path)
-				   .attr("stroke", "rgba(8, 81, 156, 0.2)")
-				   .attr("fill", "rgba(8, 81, 156, 0.6)")
-				   .attr("class",	d => d.properties.name)
-                   .on("click", function (d) {
-						d3.json("data/prod/total/total_producao.json", function(error, data) {
-							if (error) {
-								console.warn(error);
-							}
-							var year = 1998;
-							data = data[year];
-							for (var i = 0; i < data.length; i++) {
-								if (data[i].Country == d.properties.name) {
-									console.log(data[i].Country)
-									console.log(data[i].Energy)
-								}
-							}
-							
-							let country = d.properties.name;
-
-						});
-				   });                
-			});
-
-		</script>
-		<div class="col-lg-12" id="list-puntate">
-			<!-- Insert my list here -->  
-	  		<script type="text/javascript"> 
-				const data = fetch("./europe_features.json")
-				.then(response => {
-				return response.json();
-				})
-				.then(data => {
-					console.log(data);
-					console.log(data.features[0].properties.name);
-					var listDiv = document.getElementById('list-puntate');
-					var form = document.createElement("form");
-					var br = document.createElement("br");
-					for (var i = 0; i < data.features.length; ++i) {
-						var cb = document.createElement("input");
-						cb.setAttribute("type", "checkbox");
-						cb.setAttribute("name", data.features[i].properties.name);
-						cb.setAttribute("onclick", "changeColor(this)")
-						
-						var label = document.createElement("label");
-						label.innerHTML = data.features[i].properties.name;
-
-						form.append(cb,label,br.cloneNode());
-						// var li=document.createElement('li');
-						// var input=document.createElement('input');
-						// input.type = "checkbox";
-						// li.appendChild(input);
-						// li.appendChild() = data.features[i].properties.name;   // Use innerHTML to set the text~
-						// // var li = "<li>" + data.features[i].properties.name + "</li>";
-						// ul.appendChild(li);                                 
-					}
-					listDiv.appendChild(form);
-				});
-				function changeColor(cb,name){
-					const data = fetch("./europe_features.json")
-					.then(response => {
-					return response.json();
-					})
-					.then(data => {
-						// console.log(d3.selectAll("path").attr("fill", "red"));
-						if(cb.checked){
-							boxes = d3.select("path."+cb.name.replaceAll(" ", ".")).attr("fill", "red");
-						}
-						else{
-							boxes = d3.select("path."+cb.name.replaceAll(" ", ".")).attr("fill", "blue");
-						}
-						// for (var i = 0; i < boxes.length; ++i) {
-						// 	// if (boxes[i].className.baseVal == cb.name)
-						// 	// 	console.log(cb.name);
-						// 	// 	boxes[i].attr("fill", "red");
-						// }
-					});
-				}
-			</script>                      
+	<script type="module">
+		d3.json("europe_features.json", function (error, data) { loadMap(data); formList(data); });
+	</script>
+	<div id="form">
+		<div id="dataSelect">
+			<h1>World map centered on European countries</h1>
+			<label for="theme-select">Escolha um tema:</label>
+			<select name="data" id="theme-select" onchange="selectData()">
+				<option value="">--Please choose an option--</option>
+				<option value="consumo">Consumo por produto energético</option>
+				<option value="consumo_familias">Consumo nas famílias(per capita)</option>
+				<option value="consumo_setor">Consumo por setor</option>
+				<option value="contr_renovaveis_consumo">Consumo energias renováveis</option>
+				<option value="contr_renovaveis_producao">Produção energias renováveis</option>
+				<option value="preco_eletricidade">Preço da eletrcidade</option>
+				<option value="prod">Produção por produto energético</option>
+			</select>
+			<br>
+			<br>
+			<label for="subtheme">Escolha um subtema:</label>
+			<select name="data" id="subtheme" onchange="subSelectData()">
+				<option value="">--Please choose an option--</option>
+			</select>
 		</div>
-	</body>
-</html>
+		<div id="list-puntate"></div>
+	</div>
+
+</body>
