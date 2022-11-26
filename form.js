@@ -47,11 +47,16 @@ function changeColor(cb, name) {
 var title;
 
 function selectData() {
+    year = 0;
     var x = document.getElementById("theme-select").value;
     var selectBox = document.getElementById('subtheme');
     // console.log(selectBox);
     while (selectBox.options.length > 1) {
         selectBox.remove(1);
+    }
+    var yearSelect = document.getElementById('yearSelect');
+    while (yearSelect.options.length > 1) {
+        yearSelect.remove(1);
     }
 
     var listSubTheme = [];
@@ -102,6 +107,7 @@ function selectData() {
 }
 
 function subSelectData() {
+    year = 0;
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
     if (y != "") {
@@ -115,27 +121,44 @@ function getThemeData() {
     return selData;
 }
 
+var themeData;
+var year = 0;
+
 function changeMapColor(path) {
     var mapTitle = document.getElementById('mapTitle');
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
-    console.log(x)
+    var yearSelect = document.getElementById('yearSelect');
+    if (year == 0) {
+        while (yearSelect.options.length > 1) {
+            yearSelect.remove(1);
+        }
+    }
     if (y != "") {
         mapTitle.textContent = x + " " + y;
     }
     else {
         mapTitle.textContent = x;
     }
-    console.log(path)
     var listDiv = document.getElementById('list-puntate');
-    const themeData = fetch(path)
+    fetch(path)
         .then(response => {
             return response.json();
         })
         .then(data => {
+            themeData = data;
             var maxValue = 0;
             var minValue = Infinity;
-            var year = 2010;
+            if (year == 0) {
+                Object.entries(data).forEach(([key, value]) => {
+                    var option = document.createElement("option");
+                    option.setAttribute("value", key);
+                    option.innerHTML = key;
+                    yearSelect.append(option);
+                    year = key;
+                });
+                yearSelect.value = year;
+            }
             selData = data[year];
             for (var i = 0; i < selData.length; ++i) {
                 if (selData[i].Energy > maxValue) maxValue = selData[i].Energy;
@@ -196,5 +219,18 @@ function deSelect() {
         }
 
     }
+}
+
+function selectYear() {
+    year = document.getElementById('yearSelect').value;
+    console.log(year);
+    var x = document.getElementById("theme-select").value;
+    var y = document.getElementById("subtheme").value;
+    if (y != "") {
+        changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
+    } else {
+        changeMapColor("data/" + x + "/" + x + ".json");
+    }
+
 }
 
