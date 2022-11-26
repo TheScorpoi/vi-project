@@ -1,13 +1,12 @@
 function formList(data) {
-    console.log(data);
-    console.log(data.features[0].properties.name);
     var listDiv = document.getElementById('list-puntate');
     var form = document.createElement("form");
     var br = document.createElement("br");
     for (var i = 0; i < data.features.length; ++i) {
         var cb = document.createElement("input");
+        cb.setAttribute("id", data.features[i].properties.name);
         cb.setAttribute("type", "checkbox");
-        cb.setAttribute("name", data.features[i].properties.name);
+        cb.setAttribute("name", "checkbox");
         cb.setAttribute("onclick", "changeColor(this)")
 
         var label = document.createElement("label");
@@ -32,10 +31,10 @@ function changeColor(cb, name) {
         .then(data => {
             // console.log(d3.selectAll("path").attr("fill", "red"));
             if (cb.checked) {
-                boxes = d3.select("path." + cb.name.replaceAll(" ", ".")).attr("fill", "red");
+                boxes = d3.select("path." + cb.id.replaceAll(" ", ".")).attr("opacity", 1);
             }
             else {
-                boxes = d3.select("path." + cb.name.replaceAll(" ", ".")).attr("fill", "white");
+                boxes = d3.select("path." + cb.id.replaceAll(" ", ".")).attr("opacity", 0.3);
             }
             // for (var i = 0; i < boxes.length; ++i) {
             // 	// if (boxes[i].className.baseVal == cb.name)
@@ -47,7 +46,6 @@ function changeColor(cb, name) {
 
 function selectData() {
     var x = document.getElementById("theme-select").value;
-    console.log(x);
     var selectBox = document.getElementById('subtheme');
     // console.log(selectBox);
     while (selectBox.options.length > 1) {
@@ -65,7 +63,6 @@ function selectData() {
         case "prod": listSubTheme = ["gas", "nuclear", "petroleo", "renovaveis", "total"]; break;
         default: listSubTheme = []; break;
     }
-    console.log(listSubTheme);
     if (listSubTheme != []) {
         for (var i = 0; i < listSubTheme.length; ++i) {
             var option = document.createElement("option");
@@ -80,8 +77,6 @@ function subSelectData() {
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
     if (y != "") {
-        console.log(x);
-        console.log(y);
         changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
     }
 }
@@ -93,7 +88,6 @@ function getThemeData() {
 }
 
 function changeMapColor(path) {
-    console.log(path);
     const themeData = fetch(path)
         .then(response => {
             return response.json();
@@ -102,7 +96,6 @@ function changeMapColor(path) {
             var year = 2020;
             selData = data[year];
             for (var i = 0; i < selData.length; ++i) {
-                console.log(selData[i]);
                 d3.select("path." + selData[i].Country.replaceAll(" ", ".")).attr("fill", countryColor(selData, selData[i].Energy));
             }
         });
@@ -115,4 +108,23 @@ function countryColor(selData, selectValue) {
     return myColor(selectValue)
 }
 
+function selects() {
+    var ele = document.getElementsByName('checkbox');
+    for (var i = 0; i < ele.length; i++) {
+        if (ele[i].type == 'checkbox') {
+            ele[i].checked = true;
+            boxes = d3.select("path." + ele[i].id.replaceAll(" ", ".")).attr("opacity", 1);
+        }
+    }
+}
+function deSelect() {
+    var ele = document.getElementsByName('checkbox');
+    for (var i = 0; i < ele.length; i++) {
+        if (ele[i].type == 'checkbox') {
+            ele[i].checked = false;
+            boxes = d3.select("path." + ele[i].id.replaceAll(" ", ".")).attr("opacity", 0.3);
+        }
+
+    }
+}
 

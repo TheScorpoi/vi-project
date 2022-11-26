@@ -50,6 +50,7 @@ function loadMap(geo_path) {
         .append("path")
         .attr("d", path)
         .attr("stroke", "rgba(0, 0, 0, 0.4)")
+        .attr("opacity", 0.3)
         .attr("fill", function (d) {
             var color = "white"
             // for (var i = 0; i < selectData.length; i++) {
@@ -91,7 +92,6 @@ function loadMap(geo_path) {
             console.log(d.properties.name);
         })
         .on("mouseover", function (d) {
-            countrydiv.html(d.properties.name + ": " + countryValue)
             countrydiv.style("opacity", 1);
         })
         .on("mousemove", function (d) {
