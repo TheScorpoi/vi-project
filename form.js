@@ -126,6 +126,7 @@ var year = 0;
 
 function changeMapColor(path) {
     var mapTitle = document.getElementById('mapTitle');
+    d3.selectAll("path").attr("fill", "white");
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
     var yearSelect = document.getElementById('yearSelect');
