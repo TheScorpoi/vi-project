@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title>Mercator projection</title>
 	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.13.0/d3-legend.min.js"></script>
 	<script src="mapLegend.js"></script>
 	<script src="form.js"></script>
 	<!-- <script src=" //cdnjs.cloudflare.com/ajax/libs/d3-legend/1.1.0/d3-legend.js"></script> -->
@@ -83,12 +84,23 @@
 			border-radius: 8px;
 			pointer-events: none;
 		}
+
+		#legendLinear {
+			width: auto;
+			margin-left: 0px;
+			margin-right: 20px;
+			float: right;
+			margin-top: 20px;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+		}
 	</style>
 </head>
 
 <body>
 	<div id="container">
-		<h1>World map centered on European countries</h1>
+		<h1 id="mapTitle">World map centered on European countries</h1>
 	</div>
 	<script type="module">
 		d3.json("europe_features.json", function (error, data) { loadMap(data); formList(data); });

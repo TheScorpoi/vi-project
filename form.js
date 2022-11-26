@@ -44,6 +44,8 @@ function changeColor(cb, name) {
         });
 }
 
+var title;
+
 function selectData() {
     var x = document.getElementById("theme-select").value;
     var selectBox = document.getElementById('subtheme');
@@ -54,14 +56,40 @@ function selectData() {
 
     var listSubTheme = [];
     switch (x) {
-        case 'consumo': listSubTheme = ["eletrica", "gas", "petroleo", "renovaveis", "total"]; break;
-        case "consumo_familias": listSubTheme = []; break;
-        case "consumo_setor": listSubTheme = ["agricultura", "casa", "industria", "pesca", "servicos", "transportes"]; break;
-        case "contr_renovaveis_consumo": listSubTheme = []; break;
-        case "contr_renovaveis_producao": listSubTheme = []; break;
-        case "preco_eletricidade": listSubTheme = ["domestico", "industrial"]; break;
-        case "prod": listSubTheme = ["gas", "nuclear", "petroleo", "renovaveis", "total"]; break;
-        default: listSubTheme = []; break;
+        case 'consumo':
+            listSubTheme = ["eletrica", "gas", "petroleo", "renovaveis", "total"];
+            title = "tep - Milhares";
+            break;
+        case "consumo_familias":
+            listSubTheme = [];
+            title = "kgep - Rácio";
+            changeMapColor("data/" + x + "/" + x + ".json");
+            break;
+        case "consumo_setor":
+            listSubTheme = ["agricultura", "casa", "industria", "pesca", "servicos", "transportes"];
+            title = "tep - Milhares";
+            break;
+        case "contr_renovaveis_consumo":
+            listSubTheme = [];
+            title = "Proporção - %";
+            changeMapColor("data/" + x + "/" + x + ".json");
+            break;
+        case "contr_renovaveis_producao":
+            listSubTheme = [];
+            title = "Proporção - %";
+            changeMapColor("data/" + x + "/" + x + ".json");
+            break;
+        case "preco_eletricidade":
+            listSubTheme = ["domestico", "industrial"];
+            title = "Euro";
+            break;
+        case "prod":
+            listSubTheme = ["gas", "nuclear", "petroleo", "renovaveis", "total"];
+            title = "tep - Milhares";
+            break;
+        default:
+            listSubTheme = [];
+            break;
     }
     if (listSubTheme != []) {
         for (var i = 0; i < listSubTheme.length; ++i) {
@@ -88,16 +116,58 @@ function getThemeData() {
 }
 
 function changeMapColor(path) {
+    var mapTitle = document.getElementById('mapTitle');
+    var x = document.getElementById("theme-select").value;
+    var y = document.getElementById("subtheme").value;
+    console.log(x)
+    if (y != "") {
+        mapTitle.textContent = x + " " + y;
+    }
+    else {
+        mapTitle.textContent = x;
+    }
+    console.log(path)
+    var listDiv = document.getElementById('list-puntate');
     const themeData = fetch(path)
         .then(response => {
             return response.json();
         })
         .then(data => {
-            var year = 2020;
+            var maxValue = 0;
+            var minValue = Infinity;
+            var year = 2010;
             selData = data[year];
             for (var i = 0; i < selData.length; ++i) {
+                if (selData[i].Energy > maxValue) maxValue = selData[i].Energy;
+                if (selData[i].Energy < minValue) minValue = selData[i].Energy;
                 d3.select("path." + selData[i].Country.replaceAll(" ", ".")).attr("fill", countryColor(selData, selData[i].Energy));
             }
+
+            var linear = d3.scale.linear()
+                .domain([minValue, maxValue])
+                .range(["blue", "green"]);
+
+            var svg = d3.select("svg");
+
+            svg.append("g")
+                .attr("class", "legendLinear")
+                .attr("transform", function (d) {
+                    var w = 1000 - 200;
+                    var h = 800 - 200;
+                    return "translate(" + w + "," + h + " )"
+                });
+
+            var legendLinear = d3.legend.color()
+                .shapeWidth(30)
+                .cells(10)
+                .title(title)
+                .orient('vertical')
+                .scale(linear);
+
+            svg.select(".legendLinear")
+                .call(legendLinear);
+
+            // maplegend.setAttribute("id", "legend")
         });
 }
 
