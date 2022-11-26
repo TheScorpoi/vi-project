@@ -130,17 +130,6 @@ function changeMapColor(path) {
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
     var yearSelect = document.getElementById('yearSelect');
-    if (year == 0) {
-        while (yearSelect.options.length > 1) {
-            yearSelect.remove(1);
-        }
-    }
-    if (y != "") {
-        mapTitle.textContent = x + " " + y;
-    }
-    else {
-        mapTitle.textContent = x;
-    }
     var listDiv = document.getElementById('list-puntate');
     fetch(path)
         .then(response => {
@@ -192,7 +181,19 @@ function changeMapColor(path) {
                 .call(legendLinear);
 
             // maplegend.setAttribute("id", "legend")
+            if (year == 0) {
+                while (yearSelect.options.length > 1) {
+                    yearSelect.remove(1);
+                }
+            }
+            if (y != "") {
+                mapTitle.textContent = x + " " + y + " " + year;
+            }
+            else {
+                mapTitle.textContent = x + " " + year;
+            }
         });
+
 }
 
 function countryColor(selData, selectValue) {
