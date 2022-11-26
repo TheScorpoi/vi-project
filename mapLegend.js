@@ -22,6 +22,10 @@ function loadMap(geo_path) {
     var w = 1000;
     var h = 800;
 
+    var countrydiv = d3.select("#container").append("div")
+        .attr("class", "tooltip-donut")
+        .style("opacity", 1);
+
     //Define map projection
 
     var projection = d3.geo.mercator() //utiliser une projection standard pour aplatir les pôles, voir D3 projection plugin
@@ -85,6 +89,27 @@ function loadMap(geo_path) {
 
             // });
             console.log(d.properties.name);
+        })
+        .on("mouseover", function (d) {
+            countrydiv.html(d.properties.name + ": " + countryValue)
+            countrydiv.style("opacity", 1);
+        })
+        .on("mousemove", function (d) {
+            themeData = getThemeData();
+            countryValue = "No data";
+            if (themeData != undefined) {
+                for (var i = 0; i < themeData.length; i++) {
+                    if (themeData[i].Country == d.properties.name) {
+                        countryValue = themeData[i].Energy;
+                        break;
+                    }
+                }
+            }
+            countrydiv.html(d.properties.name + ": " + countryValue)
+                .style("left", (d3.event.pageX + 10) + "px")
+                .style("top", (d3.event.pageY - 15) + "px");
+        })
+        .on("mouseleave", function (d) {
+            countrydiv.style("opacity", 0)
         });
-
 }

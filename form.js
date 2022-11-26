@@ -86,16 +86,21 @@ function subSelectData() {
     }
 }
 
+var selData;
+
+function getThemeData() {
+    return selData;
+}
+
 function changeMapColor(path) {
     console.log(path);
-    const data = fetch(path)
+    const themeData = fetch(path)
         .then(response => {
             return response.json();
         })
         .then(data => {
             var year = 2020;
             selData = data[year];
-            console.log(selData);
             for (var i = 0; i < selData.length; ++i) {
                 console.log(selData[i]);
                 d3.select("path." + selData[i].Country.replaceAll(" ", ".")).attr("fill", countryColor(selData, selData[i].Energy));
