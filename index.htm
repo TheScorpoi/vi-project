@@ -102,6 +102,9 @@
 	<div id="container">
 		<h1 id="mapTitle">World map centered on European countries</h1>
 	</div>
+	<div>
+		<button id="button" onclick="location.href='details.htm'">Just to see details Page</button>
+	</div>
 	<script type="module">
 		d3.json("europe_features.json", function (error, data) { loadMap(data); formList(data); });
 	</script>
