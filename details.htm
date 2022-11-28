@@ -100,12 +100,9 @@
                 }
               });
             });
-
-
             function changeCountry (li) {
               localStorage.setItem("country", li.innerText);
               location.href='details.htm'
-
             }
 
           </script>
@@ -120,22 +117,32 @@
         <script>
           document.getElementById("title").innerHTML = localStorage.getItem("country");
         </script>
-        <select name="yearSelect" id="yearSelect" onchange="selectYear()">
+        <select name="yearSelect" id="yearSelect" onchange="changeYear()">
           <!--<option id="year" value="">--Escolha um Ano--</option>-->
           <script>
 
+            let year_select = document.getElementById("yearSelect");
+            
+            
+            
             d3.json("./data/consumo/total/total_consumo.json", function(data_years) {
-              lista = [];
-
-              for (let index = 0; index < data_years.length; index++) {
-                console.log("data_years: ", data_years);
+              Object.entries(data_years).forEach(([key, value]) => {
+                let option = document.createElement("option");
+                option.setAttribute("value", key);
+                option.innerHTML = key
+                option.setAttribute("onclick", "changeYear(this)");
+                year_select.appendChild(option)
                 
-              }
+              })
+              year_select.value = localStorage.getItem("year");
+            });
+            
+            function changeYear() {
+              let select = document.getElementById("yearSelect");
+              localStorage.setItem("year", select.value);
+              location.href='details.htm';
+            }
 
-              
-
-
-            })
 
 
           </script>
@@ -151,7 +158,7 @@
             <div class="flex flex-wrap">
               <span class='text-2xl font-semibold mt-2' id="span1"></span> <!-- place data here -->
               <script>
-                var year = 2005;
+                var year = localStorage.getItem("year");
                 d3.json("./data/consumo_familias/consumo_familias.json", function (data_consumo_familias) {
                   data_consumo_familias = data_consumo_familias[2005].filter(function(d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span1").innerHTML = data_consumo_familias[0].Energy;
@@ -171,7 +178,7 @@
               <span class='text-s text-gray-500 mt-2 ml-1'>%</span>
 
               <script>
-                var year = 2005;
+                var year = localStorage.getItem("year");
                 d3.json("./data/contr_renovaveis_consumo/contr_renovaveis_consumo.json", function (data_contr_renovaveis_consumo) {
                   data_contr_renovaveis_consumo = data_contr_renovaveis_consumo[year].filter(function (d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span2").innerHTML = data_contr_renovaveis_consumo[0].Energy;
@@ -191,7 +198,7 @@
               <span class='text-2xl font-semibold mt-2' id="span3"></span> <!-- place data here -->
 
               <script>
-                var year = 2009;
+                var year = localStorage.getItem("year");
                 d3.json("./data/contr_renovaveis_producao/contr_renovaveis_producao.json", function (data_contr_renovaveis_producao) {
                   data_contr_renovaveis_producao = data_contr_renovaveis_producao[year].filter(function (d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span3").innerHTML = data_contr_renovaveis_producao[0].Energy;
@@ -209,7 +216,7 @@
               <span class='text-2xl font-semibold mt-2' id="span4"></span> <!-- place data here -->
 
               <script>
-                var year = 2009;
+                var year = localStorage.getItem("year");
                 d3.json("./data/preco_eletricidade/domestico/domestico_preco_eletricidade.json", function (data_preco_domestico) {
                   data_preco_domestico = data_preco_domestico[year].filter(function (d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span4").innerHTML = data_preco_domestico[0].Energy;
@@ -231,8 +238,9 @@
 
               <script>
 
-                var year = 2009;
+                var year = localStorage.getItem("year");
                 d3.json("./data/preco_eletricidade/industrial/industrial_preco_eletricidade.json", function (data_preco_industrial) {
+                  console.log(data_preco_industrial)
                   data_preco_industrial = data_preco_industrial[year].filter(function (d) { return d.country == localStorage.getItem("country") });
                   document.getElementById("span5").innerHTML = data_preco_industrial[0].Energy;
                 });
@@ -271,7 +279,7 @@
               .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
 
-            var year = 2000;
+            var year = localStorage.getItem("year");
 
             // Parse the Data
             d3.json("./data/consumo_setor/agricultura/agricultura_consumo_setor.json", function (data_agricultura) {
@@ -386,7 +394,7 @@
                 .attr("transform",
                   "translate(" + margin.left + "," + margin.top + ")");
 
-              var year = 2000;
+              var year = localStorage.getItem("year");
 
               // Parse the Data
               d3.json("./data/prod/gas/gas_prod.json", function (data_gas) {
@@ -496,7 +504,7 @@
               .append("g")
               .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-            var year = 2020;
+            var year = localStorage.getItem("year");
 
             d3.json("./data/importacoes/comb_solido/comb_solidos_importacoes.json", function (data_comb_solido) {
               d3.json("./data/importacoes/gas/gas_importacoes.json", function (data_gas) {
@@ -618,7 +626,7 @@
               .append("g")
               .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-            var year = 2020;
+            var year = localStorage.getItem("year");
 
             d3.json("./data/exportacoes/comb_solidos/comb_solidos_exportacoes.json", function (data_comb_solido) {
               d3.json("./data/exportacoes/gas/gas_exportacoes.json", function (data_gas) {
