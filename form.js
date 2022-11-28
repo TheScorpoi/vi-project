@@ -54,9 +54,11 @@ function selectData() {
     while (selectBox.options.length > 1) {
         selectBox.remove(1);
     }
-    var yearSelect = document.getElementById('yearSelect');
-    while (yearSelect.options.length > 1) {
-        yearSelect.remove(1);
+    var minyearSelect = document.getElementById('minyearSelect');
+    var maxyearSelect = document.getElementById('maxyearSelect');
+    while (maxyearSelect.options.length > 1) {
+        maxyearSelect.remove(1);
+        minyearSelect.remove(1);
     }
 
     var listSubTheme = [];
@@ -83,6 +85,14 @@ function selectData() {
             listSubTheme = [];
             title = "Proporção - %";
             changeMapColor("data/" + x + "/" + x + ".json");
+            break;
+        case "exportacoes":
+            listSubTheme = ["comb_solidos", "eletrica", "gas", "petroleo", "renovaveis"];
+            title = "tep - Milhares";
+            break;
+        case "importacoes":
+            listSubTheme = ["comb_solidos", "eletrica", "gas", "petroleo", "renovaveis"];
+            title = "tep - Milhares";
             break;
         case "preco_eletricidade":
             listSubTheme = ["domestico", "industrial"];
@@ -123,13 +133,15 @@ function getThemeData() {
 
 var themeData;
 var year = 0;
+var minyear = Infinity;
 
 function changeMapColor(path) {
     var mapTitle = document.getElementById('mapTitle');
     d3.selectAll("path").attr("fill", "white");
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
-    var yearSelect = document.getElementById('yearSelect');
+    var minyearSelect = document.getElementById('minyearSelect');
+    var maxyearSelect = document.getElementById('maxyearSelect');
     var listDiv = document.getElementById('list-puntate');
     fetch(path)
         .then(response => {
@@ -141,13 +153,21 @@ function changeMapColor(path) {
             var minValue = Infinity;
             if (year == 0) {
                 Object.entries(data).forEach(([key, value]) => {
-                    var option = document.createElement("option");
-                    option.setAttribute("value", key);
-                    option.innerHTML = key;
-                    yearSelect.append(option);
+                    var option1 = document.createElement("option");
+                    option1.setAttribute("value", key);
+                    option1.innerHTML = key;
+                    var option2 = document.createElement("option");
+                    option2.setAttribute("value", key);
+                    option2.innerHTML = key;
+                    minyearSelect.append(option1);
+                    maxyearSelect.append(option2);
                     year = key;
+                    if(year < minyear){
+                        minyear = year;
+                    }
                 });
-                yearSelect.value = year;
+                minyearSelect.value = minyear;
+                maxyearSelect.value = year;
             }
             selData = data[year];
             for (var i = 0; i < selData.length; ++i) {
@@ -182,8 +202,9 @@ function changeMapColor(path) {
 
             // maplegend.setAttribute("id", "legend")
             if (year == 0) {
-                while (yearSelect.options.length > 1) {
-                    yearSelect.remove(1);
+                while (maxyearSelect.options.length > 1) {
+                    minyearSelect.remove(1);
+                    maxyearSelect.remove(1);
                 }
             }
             if (y != "") {
@@ -224,7 +245,7 @@ function deSelect() {
 }
 
 function selectYear() {
-    year = document.getElementById('yearSelect').value;
+    year = document.getElementById('maxyearSelect').value;
     console.log(year);
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
