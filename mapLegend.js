@@ -90,6 +90,7 @@ function loadMap(geo_path) {
 
             // });
             localStorage.setItem("country", d.properties.name);
+            localStorage.setItem("year", 2020);
             location.href='details.htm'
 
             
