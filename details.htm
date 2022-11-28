@@ -8,7 +8,6 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="//d3js.org/d3.v4.min.js" charset="utf-8"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="details.js"></script>
 <link rel="stylesheet"
           href=
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -56,7 +55,36 @@
         <div >
             <div class="mt-6">
               <p class="text-s text-gray-700 ">A</p>
-              <p class="text-xs text-black ">Andorra</p>
+              <p class="text-xs text-black " id="myList">Andorra</p>
+
+              <script>
+              let lista = [];
+
+              d3.json("./europe_features.json", function(data) {
+                for (let index = 0; index < data.features.length; index++) {
+                  var country = data.features[index].properties.name;
+                  //console.log("sera q isto vai dar? vamos ver: " + country)
+                  lista.push(country);
+                }
+
+                lista.sort();
+                let list = document.getElementById("myList");
+
+                data.forEach((item) => {
+                  let li = document.createElement("li");
+                  li.innerHTML = item;
+                  list.appendChild(li);
+                });
+                  
+                });
+
+                console.log(lista);
+
+
+                //console.log("sera q isto vai dar? vamos ver: " + data.features[0].properties.name);
+              });
+
+              </script>
               
             </div>
 
@@ -67,6 +95,9 @@
     <div class='mt-12 w-full mx-10'>
       <div onload="getCurrentURL()">
         <h1 class="text-3xl font-bold ml-3" id="title">Alemanha</h1>
+        <select name="yearSelect" id="yearSelect" onchange="selectYear()">
+          <option value="">--Escolha um Ano--</option>
+        </select>
       </div>
 
       <div class='flex flex-row lg:flex-nowrap justify-center'>
@@ -76,7 +107,16 @@
               <p class="text-s text-gray-700 ">Consumo nas Famílias</p>
               <p class="text-xs text-gray-700 mt-1 ">(Per Capita)</p>
                 <div class="flex flex-wrap">
-                  <span class='text-2xl font-semibold mt-2'>647,0</span>  <!-- place data here -->
+                  <span class='text-2xl font-semibold mt-2' id="span1"></span>  <!-- place data here -->
+                  <script>
+                    var year = 1991;
+                    d3.json("./data/consumo_familias/consumo_familias.json", function(data_consumo_familias_1) {      
+                      //data_consumo_familias_1 = data_consumo_familias_1[year].filter(function(d) { return d.Country == "Alemanha" });
+                      //console.log("asdsada " + data_consumo_familias_1);
+                      //document.getElementById("span1").innerHTML = data_consumo_familias_1.Energy;
+                    });
+
+                  </script>
                   <span class='text-s text-gray-500 mt-2 ml-1'>tep</span>
                 </div>
             </div>
@@ -86,8 +126,19 @@
             <div class="bg-white h-32  w-72 p-4 pt-5 rounded-2xl shadow-md" >
               <p class="text-s text-gray-700 ">Contribuição Energias Renováveis Consumo </p>
                 <div class="flex flex-wrap">
-                  <span class='text-2xl font-semibold mt-2'>647,0</span>   <!-- place data here -->
-                  <span class='text-s text-gray-500 mt-2 ml-1'>tep</span>
+                  <span class='text-2xl font-semibold mt-2' id="span2"></span>   <!-- place data here -->
+                  <span class='text-s text-gray-500 mt-2 ml-1'>%</span>
+
+                  <script>
+                    var year = 2005;
+                    d3.json("./data/contr_renovaveis_consumo/contr_renovaveis_consumo.json", function(data_contr_renovaveis_consumo) {      
+                      data_contr_renovaveis_consumo = data_contr_renovaveis_consumo[year].filter(function(d) { return d.Country == "Alemanha" });
+                      console.log("asdsada " + data_contr_renovaveis_consumo.Energy);
+                      document.getElementById("span2").innerHTML = data_contr_renovaveis_consumo.Energy;
+              
+                    });
+
+                  </script>
                 </div>
             </div>
           </div>
@@ -97,8 +148,17 @@
             <div class="bg-white h-32  w-72 p-4 pt-5 rounded-2xl shadow-md" >
               <p class="text-s text-gray-700 ">Contribuição Energias Renováveis Produção</p>
                 <div class="flex flex-wrap">
-                  <span class='text-2xl font-semibold mt-2'>647,0</span>  <!-- place data here -->
-                  <span class='text-s text-gray-500 mt-2 ml-1'>tep</span>
+                  <span class='text-2xl font-semibold mt-2' id="span3"></span>  <!-- place data here -->
+
+                  <script>
+                    var year = 2009;
+                    d3.json("./data/contr_renovaveis_producao/contr_renovaveis_producao.json", function(data_contr_renovaveis_producao) {      
+                      data_contr_renovaveis_producao = data_contr_renovaveis_producao[year].filter(function(d) { return d.Country == "Alemanha" });
+                      console.log("data_contr_renovaveis_producao " + data_contr_renovaveis_producao);
+                      document.getElementById("span3").innerHTML = data_contr_renovaveis_producao.Energy;
+                    });
+                  </script>
+                  <span class='text-s text-gray-500 mt-2 ml-1'>%</span>
                 </div>
             </div>
           </div>
@@ -107,8 +167,21 @@
             <div class="bg-white h-32  w-72 p-4 pt-5 rounded-2xl shadow-md" >
               <p class="text-s text-gray-700 ">Preço - Doméstico</p>
                 <div class="flex flex-wrap pt-6">
-                  <span class='text-2xl font-semibold mt-2'>647,0</span>  <!-- place data here -->
-                  <span class='text-s text-gray-500 mt-2 ml-1'>tep</span>
+                  <span class='text-2xl font-semibold mt-2' id="span4"></span>  <!-- place data here -->
+
+                  <script>
+                    var year = 2009;
+                    d3.json("./data/preco_eletricidade/domestico/domestico_preco_eletricidade.json", function(data_preco_domestico) { 
+                      console.log("data_preco_domestico  asdsdasdasdsadasdsdadadsdasdasdadsadassa" + data_preco_domestico);     
+                      data_preco_domestico = data_preco_domestico[year].filter(function(d) { return d.Country == "Alemanha" });
+                      console.log("data_preco_domestico " + data_preco_domestico.Energy);
+                      document.getElementById("span4").innerHTML = data_preco_domestico.Energy;
+                    });
+
+                  </script>
+
+
+                  <span class='text-s text-gray-500 mt-2 ml-1'>€</span>
                 </div>
             </div>
           </div>
@@ -117,8 +190,22 @@
             <div class="bg-white h-32  w-72 p-4 pt-5 rounded-2xl shadow-md" >
               <p class="text-s text-gray-700 ">Preço Eletricidade - Industrial</p>
                 <div class="flex flex-wrap pt-6">
-                  <span class='text-2xl font-semibold mt-2'>647,0</span>  <!-- place data here -->
-                  <span class='text-s text-gray-500 mt-2 ml-1'>tep</span>
+                  <span class='text-2xl font-semibold mt-2' id="span5"></span>  <!-- place data here -->
+
+                  <script>
+
+                    var year = 2009;
+                    d3.json("./data/preco_eletricidade/industrial/industrial_preco_eletricidade.json", function(data_preco_industrial) {      
+                      data_preco_industrial = data_preco_industrial[year].filter(function(d) { return d.country == "Alemanha" });
+                      console.log("data_preco_industrial " + data_preco_industrial.Energy);
+                      document.getElementById("span5").innerHTML = data_preco_industrial.Energy;
+                    });
+
+
+                  </script>
+
+
+                  <span class='text-s text-gray-500 mt-2 ml-1'>€</span>
                 </div>
             </div>
           </div>
@@ -129,6 +216,7 @@
         <div class='flex m-3 flex-wrap justify-center gap-1 items-center'>
           <div class="bg-white  p-4 pt-5 rounded-2xl shadow-md text-center">
             <p class="text-l font-semibold text-gray-700 text-center">Energia Consumida por Setor</p>
+            <p class="text-xs font-semibold text-gray-700 text-center">tep (tonelada equivalente de petróleo) - Milhares</p>
             <div id="bar_plot"></div>
           </div>
           <script>
@@ -242,6 +330,7 @@
             <div class='flex m-3 flex-wrap justify-center gap-1 items-center'>
               <div class="bg-white w-full p-4 pt-5 rounded-2xl shadow-md" >
                 <p class="text-l font-semibold text-gray-700 text-center">Produção de Energia</p>
+                <p class="text-xs font-semibold text-gray-700 text-center">tep (tonelada equivalente de petróleo) - Milhares</p>
                 <div id="bar_plot2"></div>
               </div>
               <script>
@@ -347,14 +436,15 @@
           <div class='flex m-3 flex-wrap justify-center gap-1 items-center w-1/2'>
             <div class="bg-white w-full  p-4 pt-5 rounded-2xl shadow-md" >
               <p class="text-l font-semibold text-gray-700 text-center">Importações de energia </p>
+              <p class="text-xs font-semibold text-gray-700 text-center">tep (tonelada equivalente de petróleo) - Milhares</p>
               <div id="pie_chart_1"></div>
             </div>
             <script>
 
               // set the dimensions and margins of the graph
-              var width = 300
+              var width = 600
                   height = 300
-                  margin = 40
+                  margin = 0
               
               // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
               var radius = Math.min(width, height) / 2 - margin
@@ -382,7 +472,7 @@
                   data_renovaveis = data_renovaveis[year].filter(function(d) { return d.Country == "Alemanha"; });
 
 
-                  var data = {"Combostivel Sólido": data_comb_solido[0].Energy, 
+                  var data = {"Combustivel Sólido": data_comb_solido[0].Energy, 
                                 "Gás": data_gas[0].Energy, 
                                 "Petróleo": data_petroleo[0].Energy, 
                                 "Elétrica": data_eletrica[0].Energy, 
@@ -422,10 +512,35 @@
                 .data(data_ready)
                 .enter()
                 .append('text')
-                .text(function(d){ return d.data.key})
                 .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
                 .style("text-anchor", "middle")
                 .style("font-size", 17)
+
+              var legend = svg_pc_1.selectAll(".legend")
+                .data(color.domain())
+                .enter().append("g")
+                .attr("class", "legend")
+                .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+              // draw legend colored rectangles
+              legend.append("rect")
+                .attr("x", width - 18)
+                .attr("width", 18)
+                .attr("height", 18)
+                .style("fill", color);
+
+              // draw legend text
+              legend.append("text")
+                .attr("x", width - 24)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .style("text-anchor", "end")
+                .text(function(d) { return d;})
+                .style("font-size", 20)
+                .style("font-weight", "bold")
+                .style("fill", "black");
+
+              
               
               // Add one dot in the legend for each name.
               })
@@ -440,6 +555,7 @@
           <div class='flex m-3 flex-wrap justify-center gap-1 items-center w-1/2'>
             <div class="bg-white w-full p-4 pt-5 rounded-2xl shadow-md" >
               <p class="text-l font-semibold text-gray-700 text-center">Exportações de Energia</p>
+              <p class="text-xs font-semibold text-gray-700 text-center">tep (tonelada equivalente de petróleo) - Milhares</p>
               <div id="pie_chart_2"></div>
             </div>
             <script>
@@ -460,8 +576,26 @@
                 .append("g")
                   .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
               
-              // Create dummy data
-              var data = {a: 9, b: 20, c:30, d:8, e:12}
+              var year = 2020;
+
+              d3.json("./data/exportacoes/comb_solidos/expor_comb_solidos.json", function(data_comb_solido) {
+                d3.json("./data/exportacoes/gas/expor_gas.json", function(data_gas) {
+                  d3.json("./data/exportacoes/petroleo/expor_petroleo.json", function(data_petroleo) {
+                    d3.json("./data/exportacoes/eletrica/expor_eletrica.json", function(data_eletrica) {
+                      d3.json("./data/exportacoes/renovaveis/expor_renovaveis.json", function(data_renovaveis) {
+
+                  data_comb_solido = data_comb_solido[year].filter(function(d) { return d.Country == "Alemanha"; });
+                  data_gas = data_gas[year].filter(function(d) { return d.Country == "Alemanha"; });
+                  data_petroleo = data_petroleo[year].filter(function(d) { return d.Country == "Alemanha"; });
+                  data_eletrica = data_eletrica[year].filter(function(d) { return d.Country == "Alemanha"; });
+                  data_renovaveis = data_renovaveis[year].filter(function(d) { return d.Country == "Alemanha"; });
+
+
+                  var data = {"Combustível Sólido": data_comb_solido[0].Energy, 
+                                "Gás": data_gas[0].Energy, 
+                                "Petróleo": data_petroleo[0].Energy, 
+                                "Elétrica": data_eletrica[0].Energy, 
+                                "Renováveis": data_renovaveis[0].Energy};
               
               // set the color scale
               var color = d3.scaleOrdinal()
@@ -490,7 +624,6 @@
                   .attr("stroke", "black")
                   .style("stroke-width", "2px")
                   .style("opacity", 0.7)
-                  .text(function(d){ return d.data.value})
               
               // Now add the annotation. Use the centroid method to get the best coordinates
               svg_pc_2
@@ -498,13 +631,41 @@
                 .data(data_ready)
                 .enter()
                 .append('text')
-                //.text(function(d){ return "grp " + d.data.key})
                 .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
                 .style("text-anchor", "middle")
                 .style("font-size", 17)
 
+              var legend_2 = svg_pc_2.selectAll(".legend")
+                .data(color.domain())
+                .enter().append("g")
+                .attr("class", "legend")
+                .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+              // draw legend colored rectangles
+              legend_2.append("rect")
+                .attr("x", width - 18)
+                .attr("width", 18)
+                .attr("height", 18)
+                .style("fill", color);
+
+              // draw legend text
+              legend_2.append("text")
+                .attr("x", width - 24)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .style("text-anchor", "end")
+                .text(function(d) { return d;})
+                .style("font-size", 20)
+                .style("font-weight", "bold")
+                .style("fill", "black");
 
               
+              // Add one dot in the legend for each name.
+              })
+              })
+              })
+              })
+              })
               
               </script>
           </div>
