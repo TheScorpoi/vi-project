@@ -119,6 +119,8 @@
 				<option value="consumo_setor">Consumo por setor</option>
 				<option value="contr_renovaveis_consumo">Consumo energias renováveis</option>
 				<option value="contr_renovaveis_producao">Produção energias renováveis</option>
+				<option value="exportacoes">Exportações por produto energético</option>
+				<option value="importacoes">Importações por produto energético</option>
 				<option value="preco_eletricidade">Preço da eletrcidade</option>
 				<option value="prod">Produção por produto energético</option>
 			</select>
@@ -130,8 +132,14 @@
 			</select>
 		</div>
 		<div id="dataSelect">
-			<label for="subtheme">Escolha um ano:</label>
-			<select name="yearSelect" id="yearSelect" onchange="selectYear()">
+			<label for="subtheme">Ano de inicio:</label>
+			<select name="minyearSelect" id="minyearSelect" onchange="selectYear()">
+				<option value="">--Please choose an option--</option>
+			</select>
+			<br>
+			<br>
+			<label for="subtheme">Ano de fim:</label>
+			<select name="maxyearSelect" id="maxyearSelect" onchange="selectYear()">
 				<option value="">--Please choose an option--</option>
 			</select>
 		</div>
