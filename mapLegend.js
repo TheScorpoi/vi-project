@@ -89,7 +89,10 @@ function loadMap(geo_path) {
             // 	let country = d.properties.name;
 
             // });
-            console.log(d.properties.name);
+            localStorage.setItem("country", d.properties.name);
+            location.href='details.htm'
+
+            
         })
         .on("mouseover", function (d) {
             countrydiv.style("opacity", 1);

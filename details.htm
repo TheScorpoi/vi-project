@@ -45,19 +45,17 @@
 
 <body class="h-screen bg-gray-100">
   <div class="flex flex-row">
-
-
     <div class="bg-white h-screen w-48 pl-2 pt-5 shadow-md overflow-y-auto">
       <div class="flex flex-wrap">
         <p class="bg-white text-l font-extrabold tracking-tight text-slate-900">Países</p>
-        <button class="btn ml-7">
+              <button class="btn ml-7" onclick="location.href='index.htm'">
           <em class="fa fa-times"></em>
         </button>
       </div>
       <div>
         <div class="mt-6">
           <p class="text-s text-gray-700 "></p>
-          <ul id="myList" onclick="changeCountry()"></ul>
+          <ul id="myList"></ul>
 
           <script>
             let lista = [];
@@ -89,22 +87,25 @@
                   list.appendChild(p);
 
                   let li_country = document.createElement("li");
-                  li_country.classList.add("text-xs", "text-gray-400", "uppercase", "mr-2", "hover:bg-gray-200", "p-3", "hover:text-gray-700", "rounded-lg");
+                  li_country.classList.add("text-xs", "text-gray-400", "mr-2", "hover:bg-gray-200", "p-3", "hover:text-gray-700", "rounded-lg");
                   li_country.innerText = item;
+                  li_country.setAttribute("onclick", "changeCountry(this)");
                   list.appendChild(li_country);
                 } else {
                   let li = document.createElement("li");
-                  li.classList.add("text-xs", "text-gray-400", "uppercase", "mr-2", "hover:bg-gray-200", "p-3", "hover:text-gray-700", "rounded-lg");
+                  li.classList.add("text-xs", "text-gray-400", "mr-2", "hover:bg-gray-200", "p-3", "hover:text-gray-700", "rounded-lg");
                   li.innerText = item;
+                  li.setAttribute("onclick", "changeCountry(this)")
                   list.appendChild(li);
                 }
               });
             });
 
 
-            function changeCountry () {
-              var country = document.getElementById("myList").getAttribute("value");
-              console.log(country);
+            function changeCountry (li) {
+              localStorage.setItem("country", li.innerText);
+              location.href='details.htm'
+
             }
 
           </script>
@@ -115,9 +116,29 @@
 
     <div class='mt-12 overflow-y-auto w-full mx-10'>
       <div onload="getCurrentURL()">
-        <h1 class="text-3xl font-bold ml-3" id="title">Alemanha</h1>
+        <h1 class="text-3xl font-bold ml-3" id="title"></h1>
+        <script>
+          document.getElementById("title").innerHTML = localStorage.getItem("country");
+        </script>
         <select name="yearSelect" id="yearSelect" onchange="selectYear()">
-          <option value="">--Escolha um Ano--</option>
+          <!--<option id="year" value="">--Escolha um Ano--</option>-->
+          <script>
+
+            d3.json("./data/consumo/total/total_consumo.json", function(data_years) {
+              lista = [];
+
+              for (let index = 0; index < data_years.length; index++) {
+                console.log("data_years: ", data_years);
+                
+              }
+
+              
+
+
+            })
+
+
+          </script>
         </select>
       </div>
 
@@ -132,7 +153,7 @@
               <script>
                 var year = 2005;
                 d3.json("./data/consumo_familias/consumo_familias.json", function (data_consumo_familias) {
-                  data_consumo_familias = data_consumo_familias[2005].filter(function(d) { return d.Country == "Alemanha" });
+                  data_consumo_familias = data_consumo_familias[2005].filter(function(d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span1").innerHTML = data_consumo_familias[0].Energy;
                 });
 
@@ -152,7 +173,7 @@
               <script>
                 var year = 2005;
                 d3.json("./data/contr_renovaveis_consumo/contr_renovaveis_consumo.json", function (data_contr_renovaveis_consumo) {
-                  data_contr_renovaveis_consumo = data_contr_renovaveis_consumo[year].filter(function (d) { return d.Country == "Alemanha" });
+                  data_contr_renovaveis_consumo = data_contr_renovaveis_consumo[year].filter(function (d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span2").innerHTML = data_contr_renovaveis_consumo[0].Energy;
 
                 });
@@ -172,7 +193,7 @@
               <script>
                 var year = 2009;
                 d3.json("./data/contr_renovaveis_producao/contr_renovaveis_producao.json", function (data_contr_renovaveis_producao) {
-                  data_contr_renovaveis_producao = data_contr_renovaveis_producao[year].filter(function (d) { return d.Country == "Alemanha" });
+                  data_contr_renovaveis_producao = data_contr_renovaveis_producao[year].filter(function (d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span3").innerHTML = data_contr_renovaveis_producao[0].Energy;
                 });
               </script>
@@ -190,7 +211,7 @@
               <script>
                 var year = 2009;
                 d3.json("./data/preco_eletricidade/domestico/domestico_preco_eletricidade.json", function (data_preco_domestico) {
-                  data_preco_domestico = data_preco_domestico[year].filter(function (d) { return d.Country == "Alemanha" });
+                  data_preco_domestico = data_preco_domestico[year].filter(function (d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span4").innerHTML = data_preco_domestico[0].Energy;
                 });
 
@@ -212,7 +233,7 @@
 
                 var year = 2009;
                 d3.json("./data/preco_eletricidade/industrial/industrial_preco_eletricidade.json", function (data_preco_industrial) {
-                  data_preco_industrial = data_preco_industrial[year].filter(function (d) { return d.country == "Alemanha" });
+                  data_preco_industrial = data_preco_industrial[year].filter(function (d) { return d.country == localStorage.getItem("country") });
                   document.getElementById("span5").innerHTML = data_preco_industrial[0].Energy;
                 });
 
@@ -259,12 +280,12 @@
                   d3.json("./data/consumo_setor/transportes/transportes_consumo_setor.json", function (data_transporte) {
                     d3.json("./data/consumo_setor/casa/casa_consumo_setor.json", function (data_casa) {
                       d3.json("./data/consumo_setor/pesca/pesca_consumo_setor.json", function (data_pesca) {
-                        data_agricultura = data_agricultura[year].filter(function (d) { return d.Country == "Alemanha"; });
-                        data_industria = data_industria[year].filter(function (d) { return d.Country == "Alemanha"; });
-                        data_servicos = data_servicos[year].filter(function (d) { return d.Country == "Alemanha"; });
-                        data_transporte = data_transporte[year].filter(function (d) { return d.Country == "Alemanha"; });
-                        data_casa = data_casa[year].filter(function (d) { return d.Country == "Alemanha"; });
-                        data_pesca = data_pesca[year].filter(function (d) { return d.Country == "Alemanha"; });
+                        data_agricultura = data_agricultura[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                        data_industria = data_industria[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                        data_servicos = data_servicos[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                        data_transporte = data_transporte[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                        data_casa = data_casa[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                        data_pesca = data_pesca[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
 
 
                         var data = [
@@ -372,10 +393,10 @@
                 d3.json("./data/prod/nuclear/nuclear_prod.json", function (data_nuclear) {
                   d3.json("./data/prod/petroleo/petroleo_prod.json", function (data_petroleo) {
                     d3.json("./data/prod/renovaveis/renovaveis_prod.json", function (data_renovaveis) {
-                      data_gas = data_gas[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_nuclear = data_nuclear[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == "Alemanha"; });
+                      data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_nuclear = data_nuclear[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
 
 
                       var data = [
@@ -483,11 +504,11 @@
                   d3.json("./data/importacoes/eletrica/impor_eletrica.json", function (data_eletrica) {
                     d3.json("./data/importacoes/renovaveis/impor_renovaveis.json", function (data_renovaveis) {
 
-                      data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_gas = data_gas[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_eletrica = data_eletrica[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == "Alemanha"; });
+                      data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_eletrica = data_eletrica[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
 
 
                       var data = {
@@ -605,11 +626,11 @@
                   d3.json("./data/exportacoes/eletrica/expor_eletrica.json", function (data_eletrica) {
                     d3.json("./data/exportacoes/renovaveis/expor_renovaveis.json", function (data_renovaveis) {
 
-                      data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_gas = data_gas[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_eletrica = data_eletrica[year].filter(function (d) { return d.Country == "Alemanha"; });
-                      data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == "Alemanha"; });
+                      data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_eletrica = data_eletrica[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
 
 
                       var data = {
