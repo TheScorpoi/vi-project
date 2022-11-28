@@ -241,7 +241,7 @@
                 var year = localStorage.getItem("year");
                 d3.json("./data/preco_eletricidade/industrial/industrial_preco_eletricidade.json", function (data_preco_industrial) {
                   console.log(data_preco_industrial)
-                  data_preco_industrial = data_preco_industrial[year].filter(function (d) { return d.country == localStorage.getItem("country") });
+                  data_preco_industrial = data_preco_industrial[year].filter(function (d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span5").innerHTML = data_preco_industrial[0].Energy;
                 });
 
