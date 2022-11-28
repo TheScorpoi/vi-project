@@ -498,11 +498,11 @@
 
             var year = 2020;
 
-            d3.json("./data/importacoes/comb_solido/impor_comb_solidos.json", function (data_comb_solido) {
-              d3.json("./data/importacoes/gas/impor_gas.json", function (data_gas) {
-                d3.json("./data/importacoes/petroleo/impor_petroleo.json", function (data_petroleo) {
-                  d3.json("./data/importacoes/eletrica/impor_eletrica.json", function (data_eletrica) {
-                    d3.json("./data/importacoes/renovaveis/impor_renovaveis.json", function (data_renovaveis) {
+            d3.json("./data/importacoes/comb_solido/comb_solidos_importacoes.json", function (data_comb_solido) {
+              d3.json("./data/importacoes/gas/gas_importacoes.json", function (data_gas) {
+                d3.json("./data/importacoes/petroleo/petroleo_importacoes.json", function (data_petroleo) {
+                  d3.json("./data/importacoes/eletrica/eletrica_importacoes.json", function (data_eletrica) {
+                    d3.json("./data/importacoes/renovaveis/renovaveis_importacoes.json", function (data_renovaveis) {
 
                       data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
                       data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
@@ -620,11 +620,11 @@
 
             var year = 2020;
 
-            d3.json("./data/exportacoes/comb_solidos/expor_comb_solidos.json", function (data_comb_solido) {
-              d3.json("./data/exportacoes/gas/expor_gas.json", function (data_gas) {
-                d3.json("./data/exportacoes/petroleo/expor_petroleo.json", function (data_petroleo) {
-                  d3.json("./data/exportacoes/eletrica/expor_eletrica.json", function (data_eletrica) {
-                    d3.json("./data/exportacoes/renovaveis/expor_renovaveis.json", function (data_renovaveis) {
+            d3.json("./data/exportacoes/comb_solidos/comb_solidos_exportacoes.json", function (data_comb_solido) {
+              d3.json("./data/exportacoes/gas/gas_exportacoes.json", function (data_gas) {
+                d3.json("./data/exportacoes/petroleo/petroleo_exportacoes.json", function (data_petroleo) {
+                  d3.json("./data/exportacoes/eletrica/eletrica_exportacoes.json", function (data_eletrica) {
+                    d3.json("./data/exportacoes/renovaveis/renovaveis_exportacoes.json", function (data_renovaveis) {
 
                       data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
                       data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
