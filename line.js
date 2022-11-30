@@ -10,7 +10,6 @@ function line(data,selectCountrys,minyear,maxyear){
     var ele = document.getElementsByName('checkbox');
     for (var i = 0; i < ele.length; i++) {
         if (ele[i].checked == true) {
-            boxes = d3.select("path." + ele[i].id.replaceAll(" ", ".")).attr("opacity", 0.3);
             selectCountrys.add(ele[i].id);
         }
     }
