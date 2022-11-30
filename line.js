@@ -56,7 +56,7 @@ function line(data,selectCountrys,minyear,maxyear){
 
     var countrydiv = d3.select("#container2").append("div")
         .attr("class", "tooltip-donut")
-        .style("opacity", 1);
+        .style("opacity", 0);
 
        
         max =  d3.max(cities, function(c) { return d3.max(c.values, function(d) { return d.energy; }); })

@@ -83,6 +83,9 @@ function selectData() {
         case "consumo_familias":
             listSubTheme = [];
             title = "kgep - Rácio";
+            document.getElementById('subtheme').disabled = true;
+            document.getElementById('minyearSelect').disabled = false;
+            document.getElementById('maxyearSelect').disabled = false;
             changeMapColor("data/" + x + "/" + x + ".json");
             break;
         case "consumo_setor":
@@ -92,11 +95,17 @@ function selectData() {
         case "contr_renovaveis_consumo":
             listSubTheme = [];
             title = "Proporção - %";
+            document.getElementById('subtheme').disabled = true;
+            document.getElementById('minyearSelect').disabled = false;
+            document.getElementById('maxyearSelect').disabled = false;
             changeMapColor("data/" + x + "/" + x + ".json");
             break;
         case "contr_renovaveis_producao":
             listSubTheme = [];
             title = "Proporção - %";
+            document.getElementById('subtheme').disabled = true;
+            document.getElementById('minyearSelect').disabled = false;
+            document.getElementById('maxyearSelect').disabled = false;
             changeMapColor("data/" + x + "/" + x + ".json");
             break;
         case "exportacoes":
@@ -119,13 +128,17 @@ function selectData() {
             listSubTheme = [];
             break;
     }
-    if (listSubTheme != []) {
+    if (listSubTheme.length > 0) {
         for (var i = 0; i < listSubTheme.length; ++i) {
             var option = document.createElement("option");
             option.setAttribute("value", listSubTheme[i]);
             option.innerHTML = listSubTheme[i];
             selectBox.append(option);
         }
+        console.log("test")
+        document.getElementById('subtheme').disabled = false;
+        document.getElementById('minyearSelect').disabled = true;
+        document.getElementById('maxyearSelect').disabled = true;
     }
 }
 
@@ -133,6 +146,8 @@ function subSelectData() {
     year = 0;
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
+    document.getElementById('minyearSelect').disabled = false;
+    document.getElementById('maxyearSelect').disabled = false;
     if (y != "") {
         changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
     }

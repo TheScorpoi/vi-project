@@ -18,13 +18,16 @@ function loadData(data) {
 }
 
 function loadMap(geo_path) {
+    document.getElementById('subtheme').disabled = true;
+    document.getElementById('minyearSelect').disabled = true;
+    document.getElementById('maxyearSelect').disabled = true;
     //Width and height
     var w = 1000;
     var h = 800;
 
     var countrydiv = d3.select("#container").append("div")
         .attr("class", "tooltip-donut")
-        .style("opacity", 1);
+        .style("opacity", 0);
 
     //Define map projection
 
