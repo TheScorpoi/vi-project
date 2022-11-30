@@ -8,6 +8,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.13.0/d3-legend.min.js"></script>
 	<script src="mapLegend.js"></script>
 	<script src="form.js"></script>
+	<script src="line.js"></script>
 	<!-- <script src=" //cdnjs.cloudflare.com/ajax/libs/d3-legend/1.1.0/d3-legend.js"></script> -->
 	<!-- <script src="//d3js.org/topojson.v1.min.js"></script> -->
 	<style type="text/css">
@@ -31,6 +32,17 @@
 		} */
 
 		#container {
+			width: 60%;
+			margin-left: auto;
+			margin-right: 20px;
+			float: right;
+			margin-top: 20px;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+		}
+
+		#container2 {
 			width: 60%;
 			margin-left: auto;
 			margin-right: 20px;
@@ -95,58 +107,81 @@
 			background-color: white;
 			box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
 		}
+		path.line {
+		    fill: none;
+		    stroke-width: 3px;
+	    } 
+	    
+		.axis path,
+		.axis line {
+		  fill: none;
+		  stroke: slategray;
+		  shape-rendering: crispEdges;
+		}
 	</style>
 </head>
 
 <body>
-	<div id="container">
+	<div>
+		<div id="container">
+			<h1 id="mapTitle">World map centered on European countries</h1>
+		</div>
+		<div id="form">
+			<div id="dataSelect">
+				<h1>World map centered on European countries</h1>
+				<label for="theme-select">Escolha um tema:</label>
+				<select name="data" id="theme-select" onchange="selectData()">
+					<option value="">--Please choose an option--</option>
+					<option value="consumo">Consumo por produto energético</option>
+					<option value="consumo_familias">Consumo nas famílias(per capita)</option>
+					<option value="consumo_setor">Consumo por setor</option>
+					<option value="contr_renovaveis_consumo">Consumo energias renováveis</option>
+					<option value="contr_renovaveis_producao">Produção energias renováveis</option>
+					<option value="exportacoes">Exportações por produto energético</option>
+					<option value="importacoes">Importações por produto energético</option>
+					<option value="preco_eletricidade">Preço da eletrcidade</option>
+					<option value="prod">Produção por produto energético</option>
+				</select>
+				<br>
+				<br>
+				<label for="subtheme">Escolha um subtema:</label>
+				<select name="data" id="subtheme" onchange="subSelectData()">
+					<option value="">--Please choose an option--</option>
+				</select>
+			</div>
+			<div id="dataSelect">
+				<label for="subtheme">Ano de inicio:</label>
+				<select name="minyearSelect" id="minyearSelect" onchange="selectYear()">
+					<option value="">--Please choose an option--</option>
+				</select>
+				<br>
+				<br>
+				<label for="subtheme">Ano de fim:</label>
+				<select name="maxyearSelect" id="maxyearSelect" onchange="selectYear()">
+					<option value="">--Please choose an option--</option>
+				</select>
+			</div>
+			<div id="list-puntate">
+				<input type="button" onclick='selects()' value="Select All" />
+				<input type="button" onclick='deSelect()' value="Deselect All" />
+			</div>
+			<script type="module">
+				d3.json("europe_features.json", function (error, data) { loadMap(data);});
+				d3.json("counties.json", function (error, data) {formList(data);});
+			</script>
+			
+		</div>
+	</div>
+	
+	<div id="container2">
 		<h1 id="mapTitle">World map centered on European countries</h1>
 	</div>
 	<div>
 		<button id="button" onclick="location.href='details.htm'">Just to see details Page</button>
 	</div>
 	<script type="module">
-		d3.json("europe_features.json", function (error, data) { loadMap(data); formList(data); });
+		// d3.json("counties.json", function (error, data) {line(data);});
 	</script>
-	<div id="form">
-		<div id="dataSelect">
-			<h1>World map centered on European countries</h1>
-			<label for="theme-select">Escolha um tema:</label>
-			<select name="data" id="theme-select" onchange="selectData()">
-				<option value="">--Please choose an option--</option>
-				<option value="consumo">Consumo por produto energético</option>
-				<option value="consumo_familias">Consumo nas famílias(per capita)</option>
-				<option value="consumo_setor">Consumo por setor</option>
-				<option value="contr_renovaveis_consumo">Consumo energias renováveis</option>
-				<option value="contr_renovaveis_producao">Produção energias renováveis</option>
-				<option value="exportacoes">Exportações por produto energético</option>
-				<option value="importacoes">Importações por produto energético</option>
-				<option value="preco_eletricidade">Preço da eletrcidade</option>
-				<option value="prod">Produção por produto energético</option>
-			</select>
-			<br>
-			<br>
-			<label for="subtheme">Escolha um subtema:</label>
-			<select name="data" id="subtheme" onchange="subSelectData()">
-				<option value="">--Please choose an option--</option>
-			</select>
-		</div>
-		<div id="dataSelect">
-			<label for="subtheme">Ano de inicio:</label>
-			<select name="minyearSelect" id="minyearSelect" onchange="selectYear()">
-				<option value="">--Please choose an option--</option>
-			</select>
-			<br>
-			<br>
-			<label for="subtheme">Ano de fim:</label>
-			<select name="maxyearSelect" id="maxyearSelect" onchange="selectYear()">
-				<option value="">--Please choose an option--</option>
-			</select>
-		</div>
-		<div id="list-puntate">
-			<input type="button" onclick='selects()' value="Select All" />
-			<input type="button" onclick='deSelect()' value="Deselect All" />
-		</div>
-	</div>
+	
 
 </body>

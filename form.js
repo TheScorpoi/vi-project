@@ -1,17 +1,20 @@
+var selectCountrys  = new Set();
 function formList(data) {
+    // console.log(data.EUCountries)
     var listDiv = document.getElementById('list-puntate');
     var form = document.createElement("form");
     var br = document.createElement("br");
-    for (var i = 0; i < data.features.length; ++i) {
+    for (var i = 0; i < data.EUCountries.length; ++i) {
         var cb = document.createElement("input");
-        cb.setAttribute("id", data.features[i].properties.name);
+        cb.setAttribute("id", data.EUCountries[i].Country);
         cb.setAttribute("type", "checkbox");
         cb.setAttribute("name", "checkbox");
-        cb.setAttribute("onclick", "changeColor(this)")
-
+        cb.setAttribute("checked", "true");
+        cb.setAttribute("onclick", "changeColor(this)");
+        changeColor(cb);
         var label = document.createElement("label");
-        label.innerHTML = data.features[i].properties.name;
-
+        label.innerHTML = data.EUCountries[i].Country;
+        selectCountrys.add(data.EUCountries[i].Country);
         form.append(cb, label, br.cloneNode());
         // var li=document.createElement('li');
         // var input=document.createElement('input');
@@ -32,9 +35,11 @@ function changeColor(cb, name) {
             // console.log(d3.selectAll("path").attr("fill", "red"));
             if (cb.checked) {
                 boxes = d3.select("path." + cb.id.replaceAll(" ", ".")).attr("opacity", 1);
+                selectCountrys.add(cb.id);
             }
             else {
                 boxes = d3.select("path." + cb.id.replaceAll(" ", ".")).attr("opacity", 0.3);
+                selectCountrys.delete(cb.id);
             }
             // for (var i = 0; i < boxes.length; ++i) {
             // 	// if (boxes[i].className.baseVal == cb.name)
@@ -169,13 +174,15 @@ function changeMapColor(path) {
                 minyearSelect.value = minyear;
                 maxyearSelect.value = year;
             }
+            // line(data,minyear,year);
             selData = data[year];
+            
             for (var i = 0; i < selData.length; ++i) {
                 if (selData[i].Energy > maxValue) maxValue = selData[i].Energy;
                 if (selData[i].Energy < minValue) minValue = selData[i].Energy;
                 d3.select("path." + selData[i].Country.replaceAll(" ", ".")).attr("fill", countryColor(selData, selData[i].Energy));
             }
-
+            line(data,selectCountrys,minyear,year)
             var linear = d3.scale.linear()
                 .domain([minValue, maxValue])
                 .range(["blue", "green"]);
@@ -230,6 +237,7 @@ function selects() {
         if (ele[i].type == 'checkbox') {
             ele[i].checked = true;
             boxes = d3.select("path." + ele[i].id.replaceAll(" ", ".")).attr("opacity", 1);
+            selectCountrys.add(ele[i].id);
         }
     }
 }
@@ -239,6 +247,7 @@ function deSelect() {
         if (ele[i].type == 'checkbox') {
             ele[i].checked = false;
             boxes = d3.select("path." + ele[i].id.replaceAll(" ", ".")).attr("opacity", 0.3);
+            selectCountrys.delete(ele[i].id);
         }
 
     }
@@ -246,6 +255,7 @@ function deSelect() {
 
 function selectYear() {
     year = document.getElementById('maxyearSelect').value;
+    minyear = document.getElementById('minyearSelect').value;
     console.log(year);
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
