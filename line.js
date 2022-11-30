@@ -1,11 +1,20 @@
-function line(data,selectCountrys,minyear,maxyear,){
+function line(data,selectCountrys,minyear,maxyear){
+    console.log(selectCountrys.entries())
     d3.select("#svg2").remove();
     var colors=["Purple","LemonChiffon","Snow","RoyalBlue","Goldenrod","Gray","SaddleBrown","AliceBlue","LightCoral","AntiqueWhite","DarkOrchid","BlueViolet","Cyan","Salmon","DeepSkyBlue","MediumTurquoise","DarkSeaGreen","IndianRed","Olive","DodgerBlue","Indigo","Orange","PapayaWhip","Yellow","Coral","Violet","Wheat","DarkTurquoise","DarkOliveGreen","SandyBrown"];
-   
+    
     var maxEnergy = 0;
     var cities  = [];
     selectC = new Set();
-    selectCountrys.forEach((selectCountry) => {
+
+    var ele = document.getElementsByName('checkbox');
+    for (var i = 0; i < ele.length; i++) {
+        if (ele[i].checked == true) {
+            boxes = d3.select("path." + ele[i].id.replaceAll(" ", ".")).attr("opacity", 0.3);
+            selectCountrys.add(ele[i].id);
+        }
+    }
+    for (selectCountry of selectCountrys) {
         var v = [];
         Object.entries(data).forEach(([key, values]) => {
             if(parseInt(key) >= minyear && parseInt(key) <= maxyear){
@@ -23,7 +32,9 @@ function line(data,selectCountrys,minyear,maxyear,){
         if(selectC.has(selectCountry)){
             cities.push({id:selectCountry,values:v})
         }
-    })
+    }
+
+    if(cities.length == 0) return;
             
 
     var parseDate = d3.time.format("%m/%d/%Y").parse;

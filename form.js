@@ -47,6 +47,14 @@ function changeColor(cb, name) {
             // 	// 	boxes[i].attr("fill", "red");
             // }
         });
+    var x = document.getElementById("theme-select").value;
+    var y = document.getElementById("subtheme").value;
+    console.log(x)
+    if (y != "") {
+        changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
+    } else if (x !="") {
+        changeMapColor("data/" + x + "/" + x + ".json");
+    }
 }
 
 var title;
@@ -157,6 +165,7 @@ function changeMapColor(path) {
             var maxValue = 0;
             var minValue = Infinity;
             if (year == 0) {
+                console.log(minyear,year)
                 var minyear = Infinity;
                 Object.entries(data).forEach(([key, value]) => {
                     
@@ -176,6 +185,8 @@ function changeMapColor(path) {
                 minyearSelect.value = minyear;
                 maxyearSelect.value = year;
             }
+            year = maxyearSelect.value;
+            minyear = minyearSelect.value;
             // line(data,minyear,year);
             selData = data[year];
             
@@ -184,6 +195,7 @@ function changeMapColor(path) {
                 if (selData[i].Energy < minValue) minValue = selData[i].Energy;
                 d3.select("path." + selData[i].Country.replaceAll(" ", ".")).attr("fill", countryColor(selData, selData[i].Energy));
             }
+            console.log(minyear,year)
             line(data,selectCountrys,minyear,year)
             var linear = d3.scale.linear()
                 .domain([minValue, maxValue])
@@ -244,9 +256,10 @@ function selects() {
     }
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
+    console.log(x)
     if (y != "") {
         changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
-    } else {
+    } else if (x !="") {
         changeMapColor("data/" + x + "/" + x + ".json");
     }
 }
@@ -262,6 +275,7 @@ function deSelect() {
     }
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
+    console.log(x)
     if (y != "") {
         changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
     } else if (x !="") {
@@ -272,7 +286,7 @@ function deSelect() {
 function selectYear() {
     year = document.getElementById('maxyearSelect').value;
     minyear = document.getElementById('minyearSelect').value;
-    console.log(year);
+    console.log(year,minyear);
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
     if (y != "") {
