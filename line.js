@@ -1,5 +1,5 @@
 function line(data,selectCountrys,minyear,maxyear,){
-
+    d3.select("#svg2").remove();
     var colors=["Purple","LemonChiffon","Snow","RoyalBlue","Goldenrod","Gray","SaddleBrown","AliceBlue","LightCoral","AntiqueWhite","DarkOrchid","BlueViolet","Cyan","Salmon","DeepSkyBlue","MediumTurquoise","DarkSeaGreen","IndianRed","Olive","DodgerBlue","Indigo","Orange","PapayaWhip","Yellow","Coral","Violet","Wheat","DarkTurquoise","DarkOliveGreen","SandyBrown"];
    
     var maxEnergy = 0;
@@ -15,7 +15,7 @@ function line(data,selectCountrys,minyear,maxyear,){
                         if(value.Energy > maxEnergy){
                             maxEnergy = value.Energy;
                         }
-                        v.push({date:parseInt(key),energy:parseInt(value.Energy)});
+                        v.push({date:parseInt(key),energy:parseFloat(value.Energy)});
                     }
                 })   
             }
@@ -43,13 +43,15 @@ function line(data,selectCountrys,minyear,maxyear,){
     var maxDate = maxyear;
 
 
+    var countrydiv = d3.select("#container2").append("div")
+        .attr("class", "tooltip-donut")
+        .style("opacity", 1);
 
-        rows = cities[0].values
        
         max =  d3.max(cities, function(c) { return d3.max(c.values, function(d) { return d.energy; }); })
         // minDate = d3.min(rows, function(d) {return d.date; });
         // maxDate = d3.max(rows, function(d) { return d.date; });		
-
+        console.log(cities)
         z = d3.scale.ordinal(d3.schemeCategory10);
         z.domain(selectC);
         var y = d3.scale.linear()
@@ -73,7 +75,7 @@ function line(data,selectCountrys,minyear,maxyear,){
             .x(function(d){ return x(d.date); })
             .y(function(d){ return y(d.energy); })
             .interpolate("monotone");
-        d3.select("#svg2").remove();
+        
         var svg = d3.select("#container2").append("svg").attr("id","svg2").attr("height","500").attr("width","1000");
         
         var chartGroup = svg.append("g").attr("class","chartGroup").attr("transform","translate("+xNudge+","+yNudge+")");
@@ -106,7 +108,21 @@ function line(data,selectCountrys,minyear,maxyear,){
                 .attr("class", "line")
                 .attr("d", function(d) { return line(d.values); })
                 .attr("stroke",function(d) { 
-                    return colors[cont++]});
+                    return colors[cont++]})
+                    .on("mouseover", function (d) {
+                        countrydiv.style("opacity", 1);
+                        countrydiv.html(d.id)
+                            .style("left", (d3.event.pageX + 10) + "px")
+                            .style("top", (d3.event.pageY - 15) + "px");
+                    })
+                    .on("mousemove", function (d) {
+                        countrydiv.html(d.id)
+                            .style("left", (d3.event.pageX + 10) + "px")
+                            .style("top", (d3.event.pageY - 15) + "px");
+                    })
+                    .on("mouseleave", function (d) {
+                        countrydiv.style("opacity", 0)
+                    });
             
 
           // Append text to each city's <g>

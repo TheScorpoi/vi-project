@@ -157,7 +157,9 @@ function changeMapColor(path) {
             var maxValue = 0;
             var minValue = Infinity;
             if (year == 0) {
+                var minyear = Infinity;
                 Object.entries(data).forEach(([key, value]) => {
+                    
                     var option1 = document.createElement("option");
                     option1.setAttribute("value", key);
                     option1.innerHTML = key;
@@ -240,6 +242,13 @@ function selects() {
             selectCountrys.add(ele[i].id);
         }
     }
+    var x = document.getElementById("theme-select").value;
+    var y = document.getElementById("subtheme").value;
+    if (y != "") {
+        changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
+    } else {
+        changeMapColor("data/" + x + "/" + x + ".json");
+    }
 }
 function deSelect() {
     var ele = document.getElementsByName('checkbox');
@@ -251,6 +260,13 @@ function deSelect() {
         }
 
     }
+    var x = document.getElementById("theme-select").value;
+    var y = document.getElementById("subtheme").value;
+    if (y != "") {
+        changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
+    } else if (x !="") {
+        changeMapColor("data/" + x + "/" + x + ".json");
+    }
 }
 
 function selectYear() {
@@ -261,7 +277,7 @@ function selectYear() {
     var y = document.getElementById("subtheme").value;
     if (y != "") {
         changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
-    } else {
+    }  else if (x !="") {
         changeMapColor("data/" + x + "/" + x + ".json");
     }
 
