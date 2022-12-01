@@ -1,6 +1,5 @@
 var selectCountrys  = new Set();
 function formList(data) {
-    // console.log(data.EUCountries)
     var listDiv = document.getElementById('list-puntate');
     var form = document.createElement("form");
     var br = document.createElement("br");
@@ -15,14 +14,7 @@ function formList(data) {
         var label = document.createElement("label");
         label.innerHTML = data.EUCountries[i].Country;
         selectCountrys.add(data.EUCountries[i].Country);
-        form.append(cb, label, br.cloneNode());
-        // var li=document.createElement('li');
-        // var input=document.createElement('input');
-        // input.type = "checkbox";
-        // li.appendChild(input);
-        // li.appendChild() = data.features[i].properties.name;   // Use innerHTML to set the text~
-        // // var li = "<li>" + data.features[i].properties.name + "</li>";
-        // ul.appendChild(li);                                 
+        form.append(cb, label, br.cloneNode());                             
     }
     listDiv.appendChild(form);
 }
@@ -32,7 +24,6 @@ function changeColor(cb, name) {
             return response.json();
         })
         .then(data => {
-            // console.log(d3.selectAll("path").attr("fill", "red"));
             if (cb.checked) {
                 boxes = d3.select("path." + cb.id.replaceAll(" ", ".")).attr("opacity", 1);
                 selectCountrys.add(cb.id);
@@ -41,15 +32,9 @@ function changeColor(cb, name) {
                 boxes = d3.select("path." + cb.id.replaceAll(" ", ".")).attr("opacity", 0.3);
                 selectCountrys.delete(cb.id);
             }
-            // for (var i = 0; i < boxes.length; ++i) {
-            // 	// if (boxes[i].className.baseVal == cb.name)
-            // 	// 	console.log(cb.name);
-            // 	// 	boxes[i].attr("fill", "red");
-            // }
         });
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
-    console.log(x)
     if (y != "") {
         changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
     } else if (x !="") {
@@ -63,7 +48,7 @@ function selectData() {
     year = 0;
     var x = document.getElementById("theme-select").value;
     var selectBox = document.getElementById('subtheme');
-    // console.log(selectBox);
+
     while (selectBox.options.length > 1) {
         selectBox.remove(1);
     }
@@ -135,7 +120,6 @@ function selectData() {
             option.innerHTML = listSubTheme[i];
             selectBox.append(option);
         }
-        console.log("test")
         document.getElementById('subtheme').disabled = false;
         document.getElementById('minyearSelect').disabled = true;
         document.getElementById('maxyearSelect').disabled = true;
@@ -181,7 +165,6 @@ function changeMapColor(path) {
             var maxValue = 0;
             var minValue = Infinity;
             if (year == 0) {
-                console.log(minyear,year)
                 var minyear = Infinity;
                 Object.entries(data).forEach(([key, value]) => {
                     
@@ -203,7 +186,6 @@ function changeMapColor(path) {
             }
             year = maxyearSelect.value;
             minyear = minyearSelect.value;
-            // line(data,minyear,year);
             selData = data[year];
             
             for (var i = 0; i < selData.length; ++i) {
@@ -211,7 +193,6 @@ function changeMapColor(path) {
                 if (selData[i].Energy < minValue) minValue = selData[i].Energy;
                 d3.select("path." + selData[i].Country.replaceAll(" ", ".")).attr("fill", countryColor(selData, selData[i].Energy));
             }
-            console.log(minyear,year)
             line(data,selectCountrys,minyear,year)
             var linear = d3.scale.linear()
                 .domain([minValue, maxValue])
@@ -224,7 +205,6 @@ function changeMapColor(path) {
                 .attr("transform", function (d) {
                     var w = parseFloat(svg.style("width"))-120;
                     var h = parseFloat(document.getElementById("container").clientHeight) - 300;
-                    console.log(h)
                     return "translate(" + w + "," + h + " )"
                 });
 
@@ -238,7 +218,6 @@ function changeMapColor(path) {
             svg.select(".legendLinear")
                 .call(legendLinear);
 
-            // maplegend.setAttribute("id", "legend")
             if (year == 0) {
                 while (maxyearSelect.options.length > 1) {
                     minyearSelect.remove(1);
@@ -275,7 +254,6 @@ function selects() {
     }
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
-    console.log(x)
     if (y != "") {
         changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
     } else if (x !="") {
@@ -294,7 +272,6 @@ function deSelect() {
     }
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
-    console.log(x)
     if (y != "") {
         changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
     } else if (x !="") {
@@ -305,7 +282,6 @@ function deSelect() {
 function selectYear() {
     year = document.getElementById('maxyearSelect').value;
     minyear = document.getElementById('minyearSelect').value;
-    console.log(year,minyear);
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
     if (y != "") {

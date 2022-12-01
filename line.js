@@ -1,5 +1,4 @@
 function line(data,selectCountrys,minyear,maxyear){
-    console.log(selectCountrys.entries())
     d3.select("#svg2").remove();
     var colors=["Purple","LemonChiffon","Snow","RoyalBlue","Goldenrod","Gray","SaddleBrown","AliceBlue","LightCoral","AntiqueWhite","DarkOrchid","BlueViolet","Cyan","Salmon","DeepSkyBlue","MediumTurquoise","DarkSeaGreen","IndianRed","Olive","DodgerBlue","Indigo","Orange","PapayaWhip","Yellow","Coral","Violet","Wheat","DarkTurquoise","DarkOliveGreen","SandyBrown"];
     
@@ -59,9 +58,7 @@ function line(data,selectCountrys,minyear,maxyear){
 
        
         max =  d3.max(cities, function(c) { return d3.max(c.values, function(d) { return d.energy; }); })
-        // minDate = d3.min(rows, function(d) {return d.date; });
-        // maxDate = d3.max(rows, function(d) { return d.date; });		
-        console.log(cities)
+
         z = d3.scale.ordinal(d3.schemeCategory10);
         z.domain(selectC);
         var y = d3.scale.linear()
@@ -90,15 +87,8 @@ function line(data,selectCountrys,minyear,maxyear){
         
         var svg = d3.select("#container2").append("svg").attr("id","svg2").attr("height","750").attr("width","100%");
         
-        var chartGroup = svg.append("g").attr("class","chartGroup").attr("transform","translate("+xNudge+","+yNudge+")");
+        var chartGroup = svg.append("g").attr("class","chartGroup").attr("transform","translate("+xNudge+","+yNudge+")");	
         
-        // chartGroup.append("path")
-        //     .attr("class","line")
-        //     .attr("d",function(d){
-        //         console.log(rows) 
-        //         return line(rows); })		
-        
-
         chartGroup.append("g")
             .attr("class","axis x")
             .attr("transform","translate(0,"+height+")")
@@ -108,41 +98,33 @@ function line(data,selectCountrys,minyear,maxyear){
             .attr("class","axis y")
             .call(yAxis);
 
-        var city = chartGroup.selectAll(".city")
+        var linecountry = chartGroup.selectAll(".linecountry")
             .data(cities)
             .enter().append("g")
-              .attr("class", "city")
+              .attr("class", "linecountry")
               
         var cont = 0;
-          // Create a <path> element inside of each city <g>
-          // Use line generator function to convert 366 data points into SVG path string
-          city.append("path")
-                .attr("class", "line")
-                .attr("d", function(d) { return line(d.values); })
-                .attr("stroke",function(d) { 
-                    return colors[cont++]})
-                    .on("mouseover", function (d) {
-                        countrydiv.style("opacity", 1);
-                        countrydiv.html(d.id)
-                            .style("left", (d3.event.pageX + 10) + "px")
-                            .style("top", (d3.event.pageY - 15) + "px");
-                    })
-                    .on("mousemove", function (d) {
-                        countrydiv.html(d.id)
-                            .style("left", (d3.event.pageX + 10) + "px")
-                            .style("top", (d3.event.pageY - 15) + "px");
-                    })
-                    .on("mouseleave", function (d) {
-                        countrydiv.style("opacity", 0)
-                    });
+        linecountry.append("path")
+            .attr("class", "line")
+            .attr("d", function(d) { return line(d.values); })
+            .attr("stroke",function(d) { 
+                return colors[cont++]})
+                .on("mouseover", function (d) {
+                    countrydiv.style("opacity", 1);
+                    countrydiv.html(d.id)
+                        .style("left", (d3.event.pageX + 10) + "px")
+                        .style("top", (d3.event.pageY - 15) + "px");
+                })
+                .on("mousemove", function (d) {
+                    countrydiv.html(d.id)
+                        .style("left", (d3.event.pageX + 10) + "px")
+                        .style("top", (d3.event.pageY - 15) + "px");
+                })
+                .on("mouseleave", function (d) {
+                    countrydiv.style("opacity", 0)
+                });
             
-
-          // Append text to each city's <g>
-          // Data join using function to access and create a new data structure based on inherited data structure
-          // Note:
-          //   - d.values[d.values.length gives us the last element of the 366 element arrayF4A460
-          // This helps us to figure out how to correctly place city line text labels
-          city.append("text")
+          linecountry.append("text")
               .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
               .attr("transform", function(d) { 
                 return "translate(" + x(d.value.date) + "," + y(d.value.energy) + ")"; })
