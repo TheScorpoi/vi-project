@@ -43,11 +43,13 @@
 		}
 
 		#container2 {
-			width: 60%;
-			margin-left: auto;
+			width: 95%;
+			height: auto;
+			margin-left: 20px;
 			margin-right: 20px;
-			float: right;
+			float: left;
 			margin-top: 20px;
+			margin-bottom: 20px;
 			padding: 20px;
 			background-color: white;
 			box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
@@ -55,6 +57,7 @@
 
 		#form {
 			width: 30%;
+			height: 1000px;
 			margin-left: 20px;
 			margin-right: 20px;
 			float: left;
@@ -125,7 +128,7 @@
 <body>
 	<div>
 		<div id="container">
-			<h1 id="mapTitle">World map centered on European countries</h1>
+			<h1 id="mapTitle"> Mapa da europa</h1>
 		</div>
 		<div id="form">
 			<div id="dataSelect">
@@ -167,18 +170,15 @@
 				<input type="button" onclick='deSelect()' value="Deselect All" />
 			</div>
 			<script type="module">
-				d3.json("europe_features.json", function (error, data) { loadMap(data);});
 				d3.json("counties.json", function (error, data) {formList(data);});
+				d3.json("europe_features.json", function (error, data) { loadMap(data);});
 			</script>
 			
 		</div>
 	</div>
 	
 	<div id="container2">
-		<h1 id="mapTitle">World map centered on European countries</h1>
-	</div>
-	<div>
-		<button id="button" onclick="location.href='details.htm'">Just to see details Page</button>
+		<h1 id="mapTitle2"> </h1>
 	</div>
 	<script type="module">
 		// d3.json("counties.json", function (error, data) {line(data);});

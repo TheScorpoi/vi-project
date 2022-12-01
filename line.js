@@ -38,15 +38,15 @@ function line(data,selectCountrys,minyear,maxyear){
 
     var parseDate = d3.time.format("%m/%d/%Y").parse;
 
-    var margin = {left: 50, right: 20, top: 20, bottom: 50 };
+    var margin = {left: 100, right: 100, top: 20, bottom: 50 };
 
-    var width = 960 - margin.left - margin.right;
-    var height = 500 - margin.top - margin.bottom;
+    var width = document.getElementById("container2").offsetWidth - margin.left - margin.right;
+    var height = 750 - margin.top - margin.bottom;
 
 
     var max = 0;
 
-    var xNudge = 50;
+    var xNudge = 75;
     var yNudge = 20;
 
     var minDate = minyear;
@@ -71,6 +71,7 @@ function line(data,selectCountrys,minyear,maxyear){
         var x = d3.scale.linear()
                     .domain([minDate,maxDate])
                     .range([0,width]);
+
         
         var yAxis = d3.svg.axis()
                         .orient("left")
@@ -79,6 +80,7 @@ function line(data,selectCountrys,minyear,maxyear){
         var xAxis = d3.svg.axis()
                         .orient("bottom")
                         .scale(x)
+                        .ticks(maxDate-minDate)
                         .tickFormat(d3.format("d"));
         
         var line = d3.svg.line()
@@ -86,7 +88,7 @@ function line(data,selectCountrys,minyear,maxyear){
             .y(function(d){ return y(d.energy); })
             .interpolate("monotone");
         
-        var svg = d3.select("#container2").append("svg").attr("id","svg2").attr("height","500").attr("width","1000");
+        var svg = d3.select("#container2").append("svg").attr("id","svg2").attr("height","750").attr("width","100%");
         
         var chartGroup = svg.append("g").attr("class","chartGroup").attr("transform","translate("+xNudge+","+yNudge+")");
         

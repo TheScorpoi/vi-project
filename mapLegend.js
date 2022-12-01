@@ -22,35 +22,39 @@ function loadMap(geo_path) {
     document.getElementById('minyearSelect').disabled = true;
     document.getElementById('maxyearSelect').disabled = true;
     //Width and height
-    var w = 1000;
-    var h = 800;
+    
 
     var countrydiv = d3.select("#container").append("div")
         .attr("class", "tooltip-donut")
         .style("opacity", 0);
 
-    //Define map projection
+    
+    var h = parseFloat(document.getElementById("form").offsetHeight - document.getElementById("mapTitle").offsetHeight - 40);
+    //Create SVG
+    var svg = d3.select("#container")
+        .append("svg")
+        .attr("width", "100%")
+        .attr("height", h);
 
-    var projection = d3.geo.mercator() //utiliser une projection standard pour aplatir les pôles, voir D3 projection plugin
-        .center([7, 52]) //comment centrer la carte, longitude, latitude
-        .translate([w / 2, h / 2]) // centrer l'image obtenue dans le svg
-        .scale([w / 1.5]); // zoom, plus la valeur est petit plus le zoom est gros 
+    var w = parseFloat(svg.style("width"));
+    
+
+     //Define map projection
+
+     var projection = d3.geo.mercator() //utiliser une projection standard pour aplatir les pôles, voir D3 projection plugin
+     .center([7, 52]) //comment centrer la carte, longitude, latitude
+     .translate([w / 2, h / 2]) // centrer l'image obtenue dans le svg
+     .scale([w / 1.5]); // zoom, plus la valeur est petit plus le zoom est gros 
 
     //Define path generator
     var path = d3.geo.path()
         .projection(projection);
-
-    //Create SVG
-    var svg = d3.select("#container")
-        .append("svg")
-        .attr("width", w)
-        .attr("height", h);
-
     //Bind data and create one path per GeoJSON feature
     svg.selectAll("path")
         .data(geo_path.features)
         .enter()
         .append("path")
+        .attr("id","svg1")
         .attr("d", path)
         .attr("stroke", "rgba(0, 0, 0, 0.4)")
         .attr("opacity", 0.3)

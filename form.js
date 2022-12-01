@@ -165,6 +165,7 @@ var minyear = Infinity;
 
 function changeMapColor(path) {
     var mapTitle = document.getElementById('mapTitle');
+    var mapTitle2 = document.getElementById('mapTitle2');
     d3.selectAll("path").attr("fill", "white");
     var x = document.getElementById("theme-select").value;
     var y = document.getElementById("subtheme").value;
@@ -221,8 +222,9 @@ function changeMapColor(path) {
             svg.append("g")
                 .attr("class", "legendLinear")
                 .attr("transform", function (d) {
-                    var w = 1000 - 200;
-                    var h = 800 - 200;
+                    var w = parseFloat(svg.style("width"))-120;
+                    var h = parseFloat(document.getElementById("container").clientHeight) - 300;
+                    console.log(h)
                     return "translate(" + w + "," + h + " )"
                 });
 
@@ -245,9 +247,11 @@ function changeMapColor(path) {
             }
             if (y != "") {
                 mapTitle.textContent = x + " " + y + " " + year;
+                mapTitle2.textContent = x + " " + y + " " + minyear + " - " + year;
             }
             else {
                 mapTitle.textContent = x + " " + year;
+                mapTitle2.textContent = x + " " + minyear + " - " + year;
             }
         });
 
