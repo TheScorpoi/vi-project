@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8" />
+<link
+  rel="stylesheet"
+  href="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.css"
+/>
+
+<style>
+  body {
+    padding: 20px;
+  }
+</style>
+
+<style>
+  .radar-chart .area {
+    fill-opacity: 0.7;
+  }
+  .radar-chart.focus .area {
+    fill-opacity: 0.3;
+  }
+  .radar-chart.focus .area.focused {
+    fill-opacity: 0.9;
+  }
+
+  .area .circle {
+  fill: #FFD700;
+  stroke: none;
+}
+</style>
+
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script>
+
+<script>
+  RadarChart.defaultConfig.color = function() {};
+  RadarChart.defaultConfig.radius = 4;
+  RadarChart.defaultConfig.w = 400;
+  RadarChart.defaultConfig.h = 400;
+</script>
+
+<span></span>
+
+<script>
+
+
+  var data = [];
+  year = 2020
+  localStorage.setItem("country", "Alemanha")
+
+  d3.json("./data/importacoes/comb_solido/comb_solidos_importacoes.json", function (data_comb_solido) {
+              d3.json("./data/importacoes/gas/gas_importacoes.json", function (data_gas) {
+                d3.json("./data/importacoes/petroleo/petroleo_importacoes.json", function (data_petroleo) {
+                  d3.json("./data/importacoes/eletrica/eletrica_importacoes.json", function (data_eletrica) {
+                    d3.json("./data/importacoes/renovaveis/renovaveis_importacoes.json", function (data_renovaveis) {
+
+                      data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_eletrica = data_eletrica[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+
+
+                          var data = [
+                          {
+                              className: localStorage.getItem("country"),
+                              axes: [
+                                  {axis: "Combustíveis Sólidos", value: data_comb_solido[0].Energy},
+                                  {axis: "Gás", value: data_gas[0].Energy},
+                                  {axis: "Petróleo", value: data_petroleo[0].Energy},
+                                  {axis: "Elétrica", value: data_eletrica[0].Energy},
+                                  {axis: "Renováveis", value: data_renovaveis[0].Energy},
+                              ]
+
+                            }
+                        ];
+
+                        RadarChart.draw(".chart-container", data);
+
+                    })
+                })
+            })
+        })
+    });
+</script>
+
+<script>
+  var chart = RadarChart.chart();
+  var cfg = chart.config(); // retrieve default config
+  
+  var svg = d3
+    .select("body")
+    .append("svg")
+    .attr("width", cfg.w + cfg.w + 50)
+    .attr("height", cfg.h + cfg.h / 4)
+    .style("opacity", "0.8");
+
+  // many radars
+</script>
+
+<h2>EImportações de Energia</h2>
+<div class="chart-container"></div>
