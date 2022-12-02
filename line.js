@@ -39,10 +39,9 @@ function line(data,selectCountrys,minyear,maxyear){
 
     var margin = {left: 100, right: 100, top: 20, bottom: 50 };
 
-    var width = document.getElementById("container2").offsetWidth - margin.left - margin.right;
-    var height = 750 - margin.top - margin.bottom;
-
-
+    // var width = document.getElementById(".cont1").offsetWidth - margin.left - margin.right;
+    // var height = 750 - margin.top - margin.bottom;
+    var height = parseFloat(document.getElementById("form").offsetHeight - document.getElementById("mapTitle").offsetHeight );
     var max = 0;
 
     var xNudge = 75;
@@ -52,11 +51,16 @@ function line(data,selectCountrys,minyear,maxyear){
     var maxDate = maxyear;
 
 
-    var countrydiv = d3.select("#container2").append("div")
+    var countrydiv = d3.select("#container").append("div")
         .attr("class", "tooltip-donut")
         .style("opacity", 0);
 
-       
+        var svg = d3.select("#container").append("svg").attr("id","svg2").attr("height",height).attr("width","100%");
+
+        var width = parseFloat(svg.style("width"))- margin.left - margin.right;
+        
+        height -=  margin.top + margin.bottom;
+
         max =  d3.max(cities, function(c) { return d3.max(c.values, function(d) { return d.energy; }); })
 
         z = d3.scale.ordinal(d3.schemeCategory10);
@@ -85,14 +89,19 @@ function line(data,selectCountrys,minyear,maxyear){
             .y(function(d){ return y(d.energy); })
             .interpolate("monotone");
         
-        var svg = d3.select("#container2").append("svg").attr("id","svg2").attr("height","750").attr("width","100%");
+        
         
         var chartGroup = svg.append("g").attr("class","chartGroup").attr("transform","translate("+xNudge+","+yNudge+")");	
         
         chartGroup.append("g")
             .attr("class","axis x")
             .attr("transform","translate(0,"+height+")")
-            .call(xAxis);
+            .call(xAxis)
+            .selectAll("text")  
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", "rotate(-65)");
             
         chartGroup.append("g")
             .attr("class","axis y")
@@ -124,7 +133,7 @@ function line(data,selectCountrys,minyear,maxyear){
                     countrydiv.style("opacity", 0)
                 });
             
-          linecountry.append("text")
+        linecountry.append("text")
               .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
               .attr("transform", function(d) { 
                 return "translate(" + x(d.value.date) + "," + y(d.value.energy) + ")"; })
@@ -132,5 +141,7 @@ function line(data,selectCountrys,minyear,maxyear){
               .attr("dy", "0.35em")
               .style("font", "10px sans-serif")
               .text(function(d) { return d.id; });
-            
+
+        document.getElementById("svg2").style.display = "none";
+        document.getElementById("mapTitle2").style.display = "none";
 }

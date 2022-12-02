@@ -71,6 +71,7 @@ function selectData() {
             document.getElementById('subtheme').disabled = true;
             document.getElementById('minyearSelect').disabled = false;
             document.getElementById('maxyearSelect').disabled = false;
+            document.getElementById('toggle').disabled = false;
             changeMapColor("data/" + x + "/" + x + ".json");
             break;
         case "consumo_setor":
@@ -83,6 +84,7 @@ function selectData() {
             document.getElementById('subtheme').disabled = true;
             document.getElementById('minyearSelect').disabled = false;
             document.getElementById('maxyearSelect').disabled = false;
+            document.getElementById('toggle').disabled = false;
             changeMapColor("data/" + x + "/" + x + ".json");
             break;
         case "contr_renovaveis_producao":
@@ -91,6 +93,7 @@ function selectData() {
             document.getElementById('subtheme').disabled = true;
             document.getElementById('minyearSelect').disabled = false;
             document.getElementById('maxyearSelect').disabled = false;
+            document.getElementById('toggle').disabled = false;
             changeMapColor("data/" + x + "/" + x + ".json");
             break;
         case "exportacoes":
@@ -123,6 +126,7 @@ function selectData() {
         document.getElementById('subtheme').disabled = false;
         document.getElementById('minyearSelect').disabled = true;
         document.getElementById('maxyearSelect').disabled = true;
+        document.getElementById('toggle').disabled = true;
     }
 }
 
@@ -132,6 +136,7 @@ function subSelectData() {
     var y = document.getElementById("subtheme").value;
     document.getElementById('minyearSelect').disabled = false;
     document.getElementById('maxyearSelect').disabled = false;
+    document.getElementById('toggle').disabled = false;
     if (y != "") {
         changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
     }
@@ -148,6 +153,10 @@ var year = 0;
 var minyear = Infinity;
 
 function changeMapColor(path) {
+    if (document.getElementById("toggle").checked){
+        document.getElementById("toggle").checked = false;
+        changeChart();
+    }
     var mapTitle = document.getElementById('mapTitle');
     var mapTitle2 = document.getElementById('mapTitle2');
     d3.selectAll("path").attr("fill", "white");
@@ -204,7 +213,7 @@ function changeMapColor(path) {
                 .attr("class", "legendLinear")
                 .attr("transform", function (d) {
                     var w = parseFloat(svg.style("width"))-120;
-                    var h = parseFloat(document.getElementById("container").clientHeight) - 300;
+                    var h = parseFloat(document.getElementById("container").clientHeight) - 350;
                     return "translate(" + w + "," + h + " )"
                 });
 

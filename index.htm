@@ -9,6 +9,7 @@
 	<script src="mapLegend.js"></script>
 	<script src="form.js"></script>
 	<script src="line.js"></script>
+	<script src="change.js"></script>
 	<style type="text/css">
 		body {
 			background-color: rgb(243 244 246);
@@ -116,6 +117,57 @@
 		  stroke: slategray;
 		  shape-rendering: crispEdges;
 		}
+
+		.toggleContainer {
+			position: relative;
+			display: grid;
+			float: right;
+			grid-template-columns: repeat(2, 1fr);
+			width: fit-content;
+			border: 3px solid #343434;
+			border-radius: 20px;
+			background: #343434;
+			font-weight: bold;
+			color: #343434;
+			cursor: pointer;
+		}
+		.toggleContainer::before {
+			content: '';
+			position: absolute;
+			width: 50%;
+			height: 100%;
+			left: 0%;
+			border-radius:20px;
+			background: white;
+			transition: all 0.3s;
+		}
+		.toggleCheckbox:checked + .toggleContainer::before {
+			left: 50%;
+		}
+		.toggleContainer div {
+			padding: 6px;
+			text-align: center;
+			z-index: 1;
+		}
+		.toggleCheckbox {
+			display: none;
+		}
+		.toggleCheckbox:checked + .toggleContainer div:first-child{
+			color: white;
+			transition: color 0.3s;
+		}
+		.toggleCheckbox:checked + .toggleContainer div:last-child{
+			color: #343434;
+			transition: color 0.3s;
+		}
+		.toggleCheckbox + .toggleContainer div:first-child{
+			color: #343434;
+			transition: color 0.3s;
+		}
+		.toggleCheckbox + .toggleContainer div:last-child{
+			color: white;
+			transition: color 0.3s;
+		}
 	</style>
 </head>
 
@@ -170,17 +222,13 @@
 		</div>
 		<div id="container" class="cont1">
 			<h1 id="mapTitle"> Mapa da europa</h1>
+			<h1 id="mapTitle2" style="display: none;"> </h1>
+			<input type="checkbox" id="toggle" class="toggleCheckbox" onclick='changeChart()'/>
+			<label for="toggle" class='toggleContainer'>
+				<div>Mapa</div>   
+				<div>Linha</div>
+			</label>
 		</div>
 	</div>
-	<div class="float-container">
-		<div id="container2">
-			<h1 id="mapTitle2"> </h1>
-		</div>
-		<div></div>
-	</div>
-	
-	<script type="module">
-	</script>
-	
 
 </body>

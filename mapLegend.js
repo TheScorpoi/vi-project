@@ -21,6 +21,7 @@ function loadMap(geo_path) {
     document.getElementById('subtheme').disabled = true;
     document.getElementById('minyearSelect').disabled = true;
     document.getElementById('maxyearSelect').disabled = true;
+    document.getElementById('toggle').disabled = true;
 
     var countrydiv = d3.select("#container").append("div")
         .attr("class", "tooltip-donut")
@@ -32,6 +33,7 @@ function loadMap(geo_path) {
     var svg = d3.select("#container")
         .append("svg")
         .attr("width", "100%")
+        .attr("id","svg1")
         .attr("height", h);
 
     var w = parseFloat(svg.style("width"));
@@ -48,7 +50,6 @@ function loadMap(geo_path) {
         .data(geo_path.features)
         .enter()
         .append("path")
-        .attr("id","svg1")
         .attr("d", path)
         .attr("stroke", "rgba(0, 0, 0, 0.4)")
         .attr("opacity", 0.3)
