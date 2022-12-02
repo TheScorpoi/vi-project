@@ -1,7 +1,6 @@
 function line(data,selectCountrys,minyear,maxyear){
     d3.select("#svg2").remove();
-    var colors=["Purple","LemonChiffon","Snow","RoyalBlue","Goldenrod","Gray","SaddleBrown","AliceBlue","LightCoral","AntiqueWhite","DarkOrchid","BlueViolet","Cyan","Salmon","DeepSkyBlue","MediumTurquoise","DarkSeaGreen","IndianRed","Olive","DodgerBlue","Indigo","Orange","PapayaWhip","Yellow","Coral","Violet","Wheat","DarkTurquoise","DarkOliveGreen","SandyBrown"];
-    
+    var colors = ["Purple","RoyalBlue","Goldenrod","Gray","SaddleBrown","LightCoral","DarkOrchid","BlueViolet","Cyan","Salmon","DeepSkyBlue","MediumTurquoise","DarkSeaGreen","IndianRed","Olive","DodgerBlue","Indigo","Orange","PapayaWhip","Yellow","Coral","Violet","Wheat","DarkTurquoise","DarkOliveGreen","SandyBrown","LemonChiffon","Snow","AliceBlue","AntiqueWhite"];    
     var maxEnergy = 0;
     var cities  = [];
     selectC = new Set();
