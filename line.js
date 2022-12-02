@@ -141,6 +141,8 @@ function line(data,selectCountrys,minyear,maxyear){
               .style("font", "10px sans-serif")
               .text(function(d) { return d.id; });
 
+    if (!document.getElementById("toggle").checked){
         document.getElementById("svg2").style.display = "none";
         document.getElementById("mapTitle2").style.display = "none";
+    }
 }

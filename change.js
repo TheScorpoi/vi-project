@@ -8,6 +8,13 @@ function changeChart() {
             document.getElementById("mapTitle2").style.display = "none";
         x.style.display = "block";
         document.getElementById("mapTitle").style.display = "block";
+        var x = document.getElementById("theme-select").value;
+        var y = document.getElementById("subtheme").value;
+        if (y != "") {
+            changeMapColor("data/" + x + "/" + y + "/" + y + "_" + x + ".json");
+        }else {
+            changeMapColor("data/" + x + "/" + x + ".json");
+        }
     } else {
         x.style.display = "none";
         document.getElementById("mapTitle").style.display = "none";

@@ -153,10 +153,10 @@ var year = 0;
 var minyear = Infinity;
 
 function changeMapColor(path) {
-    if (document.getElementById("toggle").checked){
-        document.getElementById("toggle").checked = false;
-        changeChart();
-    }
+    // if (!document.getElementById("toggle").checked){
+    //     document.getElementById("svg2").style.display = "none";
+    //     document.getElementById("mapTitle2").style.display = "none";
+    // }
     var mapTitle = document.getElementById('mapTitle');
     var mapTitle2 = document.getElementById('mapTitle2');
     d3.selectAll("path").attr("fill", "white");
@@ -212,7 +212,7 @@ function changeMapColor(path) {
             svg.append("g")
                 .attr("class", "legendLinear")
                 .attr("transform", function (d) {
-                    var w = parseFloat(svg.style("width"))-120;
+                    var w = parseFloat(document.getElementById("container").clientWidth)-200;
                     var h = parseFloat(document.getElementById("container").clientHeight) - 350;
                     return "translate(" + w + "," + h + " )"
                 });
