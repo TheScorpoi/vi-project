@@ -28,7 +28,7 @@ function loadMap(geo_path) {
         .style("opacity", 0);
 
     
-    var h = parseFloat(document.getElementById("form").offsetHeight - document.getElementById("mapTitle").offsetHeight - 40);
+    var h = parseFloat(document.getElementById("form").offsetHeight - document.getElementById("mapTitle").offsetHeight  - document.getElementById("toggle").offsetHeight - 80);
 
     var svg = d3.select("#container")
         .append("svg")

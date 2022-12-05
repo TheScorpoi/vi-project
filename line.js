@@ -40,7 +40,7 @@ function line(data,selectCountrys,minyear,maxyear){
 
     // var width = document.getElementById(".cont1").offsetWidth - margin.left - margin.right;
     // var height = 750 - margin.top - margin.bottom;
-    var height = parseFloat(document.getElementById("form").offsetHeight - document.getElementById("mapTitle").offsetHeight );
+    var height = parseFloat(document.getElementById("form").offsetHeight - document.getElementById("mapTitle").offsetHeight - document.getElementById("toggle").offsetHeight - 80);
     var max = 0;
 
     var xNudge = 75;
