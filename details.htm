@@ -10,7 +10,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="//d3js.org/d3.v4.min.js" charset="utf-8"></script>
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-  <script src="change.js"></script>
+
+  <script src="RadarChart.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     h1 {
@@ -108,6 +110,42 @@
 			color: white;
 			transition: color 0.3s;
 		}
+    #chart {
+	position: absolute;
+	top: 50px;
+	left: 100px;
+}
+  
+  .toolTip {
+  pointer-events: none;
+	position: absolute;
+    display: none;
+  min-width: 50px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  padding: 9px 14px 6px 14px;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 1.3;
+  color: #5B6770;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, .15);
+}
+.toolTip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid white;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -12px;
+}  
+.toolTip span {
+	font-weight: 500;
+  color: #081F2C;
+}
   </style>
 </head>
 
@@ -308,7 +346,6 @@
 
                 var year = localStorage.getItem("year");
                 d3.json("./data/preco_eletricidade/industrial/industrial_preco_eletricidade.json", function (data_preco_industrial) {
-                  console.log(data_preco_industrial)
                   data_preco_industrial = data_preco_industrial[year].filter(function (d) { return d.Country == localStorage.getItem("country") });
                   document.getElementById("span5").innerHTML = data_preco_industrial[0].Energy;
                 });
@@ -547,16 +584,18 @@
         <div class='flex m-3 flex-wrap justify-center gap-1 items-center w-1/2'>
           <div class="bg-white w-full  p-4 pt-5 rounded-2xl shadow-md">
             <p class="text-l font-semibold text-gray-700 text-center">Importações de Energia </p>
-            <p class="text-xs font-semibold text-gray-700 text-center">tep (tonelada equivalente de petróleo) - Milhares
-            </p>
-            <input type="checkbox" id="toggle" class="toggleCheckbox" onclick='changeChart()'/>
+            <p class="text-xs font-semibold text-gray-700 text-center" id="legend1"></p>
+            <input type="checkbox" id="toggle" class="toggleCheckbox" onclick='changeChart1()'/>
               <label for="toggle" class='toggleContainer'>
                   <div>Circular</div>
                   <div>Radar</div>
               </label>
             <div id="pie_chart_1"></div>
+            <div id="radar_chart_1" style="display: none;"></div>
+
           </div>
           <script>
+            document.getElementById("legend1").innerHTML = "tep (tonelada equivalente de petróleo) - Milhares";
 
             // set the dimensions and margins of the graph
             var width = 600
@@ -668,22 +707,105 @@
               })
             })
 
+            function changeChart1() {
+              var x = document.getElementById("pie_chart_1");
+              var y = document.getElementById("radar_chart_1");
+              if (x.style.display === "none") {
+                if(y != null)
+                y.style.display = "none";
+                document.getElementById("radar_chart_1").style.display = "none";
+                
+                document.getElementById("legend1").innerHTML = "tep (tonelada equivalente de petróleo) - Milhares";
+                x.style.display = "block";
+                document.getElementById("pie_chart_1").style.display = "block";
+                
+                      year = localStorage.getItem("year");
+
+                      var width = 300,
+                          height = 300;
+
+                      // Config for the Radar chart
+                      var config = {
+                          w: width,
+                          h: height,
+                          maxValue: 100,
+                          levels: 5,
+                          ExtraWidthX: 300
+                      }
+    
+                      d3.json("./data/importacoes/comb_solido/comb_solidos_importacoes.json", function (data_comb_solido) {
+                                  d3.json("./data/importacoes/gas/gas_importacoes.json", function (data_gas) {
+                                    d3.json("./data/importacoes/petroleo/petroleo_importacoes.json", function (data_petroleo) {
+                                      d3.json("./data/importacoes/eletrica/eletrica_importacoes.json", function (data_eletrica) {
+                                        d3.json("./data/importacoes/renovaveis/renovaveis_importacoes.json", function (data_renovaveis) {
+    
+                                          data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                                          data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                                          data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                                          data_eletrica = data_eletrica[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                                          data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+    
+                                          var renovaveis_total = data_comb_solido[0].Energy + data_gas[0].Energy + data_petroleo[0].Energy + data_eletrica[0].Energy + data_renovaveis[0].Energy;
+                                          console.log(data_renovaveis[0].Energy);
+                                          console.log(renovaveis_total);
+                                              var data = [
+                                                [
+                                                      {"area": "Combustíveis Sólidos", "value": Math.round((data_comb_solido[0].Energy  * 100 ) / renovaveis_total)},
+                                                      {"area": "Gás", "value": Math.round((data_gas[0].Energy * 100 )/ renovaveis_total)},
+                                                      {"area": "Petróleo", "value": Math.round((data_petroleo[0].Energy * 100)/ renovaveis_total)},
+                                                      {"area": "Elétrica", "value": Math.round((data_eletrica[0].Energy * 100)/ renovaveis_total)},
+                                                      {"area": "Renováveis", "value": Math.round((data_renovaveis[0].Energy * 100) / renovaveis_total)}
+                                                  ]
+                                            ];
+    
+                                            RadarChart.draw("#radar_chart_1", data, config);
+    
+                                        })
+                                    })
+                                })
+                            })
+                        }); 
+                        
+                        var svg = d3.select('body')
+                            .selectAll('svg')
+                            .append('svg')
+                            .attr("width", width)
+                            .attr("height", height);
+
+
+
+
+                  } else {
+                  x.style.display = "none";
+                  document.getElementById("pie_chart_1").style.display = "none";
+
+                  document.getElementById("legend1").innerHTML = "Percentagem (%)";
+
+                  
+                  if(y != null)
+                      y.style.display = "block";
+                      document.getElementById("radar_chart_1").style.display = "block";
+              }
+            }
+
           </script>
         </div>
 
         <div class='flex m-3 flex-wrap justify-center gap-1 items-center w-1/2'>
           <div class="bg-white w-full p-4 pt-5 rounded-2xl shadow-md">
             <p class="text-l font-semibold text-gray-700 text-center">Exportações de Energia</p>
-            <p class="text-xs font-semibold text-gray-700 text-center">tep (tonelada equivalente de petróleo) - Milhares
-            </p>
-            <input type="checkbox" id="toggle" class="toggleCheckbox" onclick='changeChart()'/>
-            <label for="toggle" class='toggleContainer'>
+            <p class="text-xs font-semibold text-gray-700 text-center" id="legend2"></p>
+            <input type="checkbox" id="toggle2" class="toggleCheckbox" onclick='changeChart2()'/>
+            <label for="toggle2" class='toggleContainer'>
                 <div>Circular</div>
                 <div>Radar</div>
             </label>
             <div id="pie_chart_2"></div>
+            <div id="radar_chart_2" style="display: none;"></div>
           </div>
           <script>
+            document.getElementById("legend2").innerText = "tep (tonelada equivalente de petróleo) - Milhares"
+
 
             // set the dimensions and margins of the graph
             var width = 300
@@ -791,184 +913,89 @@
               })
             })
 
-          </script>
-          <!-- 
-          <div class="flex flex-row">
-            <div class='flex m-3 flex-wrap justify-center gap-1 items-center w-1/2'>
-              <div class="bg-white w-full  p-4 pt-5 rounded-2xl shadow-md">
-                <p class="text-l font-semibold text-gray-700 text-center">Importações de Energia </p>
-                <p class="text-xs font-semibold text-gray-700 text-center">tep (tonelada equivalente de petróleo) - Milhares
-                </p>
-                <div class="radar_chart_1"></div>
-              </div>-->
-              <script>
-                /*
-                RadarChart.defaultConfig.color = function() {};
-                RadarChart.defaultConfig.radius = 4;
-                RadarChart.defaultConfig.w = 400;
-                RadarChart.defaultConfig.h = 400;
+            function changeChart2() {
+              var x = document.getElementById("pie_chart_2");
+              var y = document.getElementById("radar_chart_2");
+              if (x.style.display === "none") {
+                  if(y != null)
+                      y.style.display = "none";
+                      document.getElementById("radar_chart_2").style.display = "none";
+                    
+                      year = localStorage.getItem("year");
 
-                year = localStorage.getItem("year");
+                      document.getElementById("legend2").innerText = "tep (tonelada equivalente de petróleo) - Milhares"
 
-                d3.json("./data/importacoes/comb_solido/comb_solidos_importacoes.json", function (data_comb_solido) {
-                            d3.json("./data/importacoes/gas/gas_importacoes.json", function (data_gas) {
-                              d3.json("./data/importacoes/petroleo/petroleo_importacoes.json", function (data_petroleo) {
-                                d3.json("./data/importacoes/eletrica/eletrica_importacoes.json", function (data_eletrica) {
-                                  d3.json("./data/importacoes/renovaveis/renovaveis_importacoes.json", function (data_renovaveis) {
+                      var width = 300,
+                          height = 300;
 
-                                    data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
-                                    data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
-                                    data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
-                                    data_eletrica = data_eletrica[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
-                                    data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                      // Config for the Radar chart
+                      var config = {
+                          w: width,
+                          h: height,
+                          maxValue: 100,
+                          levels: 5,
+                          ExtraWidthX: 300
+                      }
+    
+                      d3.json("./data/exportacoes/comb_solidos/comb_solidos_exportacoes.json", function (data_comb_solido) {
+                                  d3.json("./data/exportacoes/gas/gas_exportacoes.json", function (data_gas) {
+                                    d3.json("./data/exportacoes/petroleo/petroleo_exportacoes.json", function (data_petroleo) {
+                                      d3.json("./data/exportacoes/eletrica/eletrica_exportacoes.json", function (data_eletrica) {
+                                        d3.json("./data/exportacoes/renovaveis/renovaveis_exportacoes.json", function (data_renovaveis) {
+    
+                                          data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                                          data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                                          data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                                          data_eletrica = data_eletrica[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+                                          data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
+    
+                                          var exportacoes_total = data_comb_solido[0].Energy + data_gas[0].Energy + data_petroleo[0].Energy + data_eletrica[0].Energy + data_renovaveis[0].Energy;
+    
+                                              var data = [
+                                                [
+                                                      {"area": "Combustíveis Sólidos", "value": Math.round((data_comb_solido[0].Energy * 100) /exportacoes_total)},
+                                                      {"area": "Gás", "value": Math.round((data_gas[0].Energy * 100) /exportacoes_total)},
+                                                      {"area": "Petróleo", "value": Math.round((data_petroleo[0].Energy * 100) /exportacoes_total)},
+                                                      {"area": "Elétrica", "value": Math.round((data_eletrica[0].Energy * 100) /exportacoes_total)},
+                                                      {"area": "Renováveis", "value": Math.round((data_renovaveis[0].Energy * 100) /exportacoes_total)}
+                                                  ]
+                                            ];
+    
+                                            RadarChart.draw("#radar_chart_2", data, config);
+    
+                                        })
+                                    })
+                                })
+                            })
+                        }); 
+                        
+                        var svg = d3.select('body')
+                            .selectAll('svg')
+                            .append('svg')
+                            .attr("width", width)
+                            .attr("height", height);
 
 
-                                        var data = [
-                                        {
-                                            className: localStorage.getItem("country"),
-                                            axes: [
-                                                {axis: "Combustíveis Sólidos", value: data_comb_solido[0].Energy},
-                                                {axis: "Gás", value: data_gas[0].Energy},
-                                                {axis: "Petróleo", value: data_petroleo[0].Energy},
-                                                {axis: "Elétrica", value: data_eletrica[0].Energy},
-                                                {axis: "Renováveis", value: data_renovaveis[0].Energy},
-                                            ]
+                  x.style.display = "block";
+                  document.getElementById("pie_chart_2").style.display = "block";
 
-                                          }
-                                      ];
 
-                                      RadarChart.draw(".radar_chart_1", data);
+                  } else {
+                  x.style.display = "none";
+                  document.getElementById("pie_chart_2").style.display = "none";
+                  document.getElementById("legend2").innerText = "Percentagem (%)"
 
-                                  })
-                              })
-                          })
-                      })
-                  });
-                  */
-              </script>
-            <!-- </div>
-    
-            <div class='flex m-3 flex-wrap justify-center gap-1 items-center w-1/2'>
-              <div class="bg-white w-full p-4 pt-5 rounded-2xl shadow-md">
-                <p class="text-l font-semibold text-gray-700 text-center">Exportações de Energia</p>
-                <p class="text-xs font-semibold text-gray-700 text-center">tep (tonelada equivalente de petróleo) - Milhares
-                </p>
-                <input type="checkbox" id="toggle" class="toggleCheckbox" onclick='changeChart()'/>
-                <label for="toggle" class='toggleContainer'>
-                    <div>Circular</div>
-                    <div>Radar</div>
-                </label>
-                <div id="pie_chart_2"></div>
-              </div>-->
-              <script>
-                /*
-                // set the dimensions and margins of the graph
-                var width = 300
-                height = 300
-                margin = 40
-    
-                // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-                var radius = Math.min(width, height) / 2 - margin
-    
-                // append the svg object to the div called 'my_dataviz'
-                var svg_pc_2 = d3.select("#pie_chart_2")
-                  .append("svg")
-                  .attr("width", 500)
-                  .attr("height", height)
-                  .append("g")
-                  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-    
-                var year = localStorage.getItem("year");
-    
-                d3.json("./data/exportacoes/comb_solidos/comb_solidos_exportacoes.json", function (data_comb_solido) {
-                  d3.json("./data/exportacoes/gas/gas_exportacoes.json", function (data_gas) {
-                    d3.json("./data/exportacoes/petroleo/petroleo_exportacoes.json", function (data_petroleo) {
-                      d3.json("./data/exportacoes/eletrica/eletrica_exportacoes.json", function (data_eletrica) {
-                        d3.json("./data/exportacoes/renovaveis/renovaveis_exportacoes.json", function (data_renovaveis) {
-    
-                          data_comb_solido = data_comb_solido[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
-                          data_gas = data_gas[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
-                          data_petroleo = data_petroleo[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
-                          data_eletrica = data_eletrica[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
-                          data_renovaveis = data_renovaveis[year].filter(function (d) { return d.Country == localStorage.getItem("country"); });
-    
-    
-                          var data = {
-                            "Combustível Sólido": data_comb_solido[0].Energy,
-                            "Gás": data_gas[0].Energy,
-                            "Petróleo": data_petroleo[0].Energy,
-                            "Elétrica": data_eletrica[0].Energy,
-                            "Renováveis": data_renovaveis[0].Energy
-                          };
-    
-                          // set the color scale
-                          var color = d3.scaleOrdinal()
-                            .domain(data)
-                            .range(d3.schemeSet2);
-    
-                          // Compute the position of each group on the pie:
-                          var pie = d3.pie()
-                            .value(function (d) { return d.value; })
-                          var data_ready = pie(d3.entries(data))
-                          // Now I know that group A goes from 0 degrees to x degrees and so on.
-    
-                          // shape helper to build arcs:
-                          var arcGenerator = d3.arc()
-                            .innerRadius(0)
-                            .outerRadius(radius)
-    
-                          // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-                          svg_pc_2
-                            .selectAll('mySlices')
-                            .data(data_ready)
-                            .enter()
-                            .append('path')
-                            .attr('d', arcGenerator)
-                            .attr('fill', function (d) { return (color(d.data.key)) })
-                            .attr("stroke", "black")
-                            .style("stroke-width", "2px")
-                            .style("opacity", 0.7)
-    
-                          // Now add the annotation. Use the centroid method to get the best coordinates
-                          svg_pc_2
-                            .selectAll('mySlices')
-                            .data(data_ready)
-                            .enter()
-                            .append('text')
-                            .attr("transform", function (d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
-                            .style("text-anchor", "middle")
-                            .style("font-size", 17)
-    
-                          var legend_2 = svg_pc_2.selectAll(".legend")
-                            .data(color.domain())
-                            .enter().append("g")
-                            .attr("class", "legend")
-                            .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
-    
-                          // draw legend colored rectangles
-                          legend_2.append("rect")
-                            .attr("x", 100 - 18)
-                            .attr("width", 18)
-                            .attr("height", 18)
-                            .style("fill", color);
-    
-                          // draw legend text
-                          legend_2.append("text")
-                            .attr("x", 100 - 24)
-                            .attr("y", 9)
-                            .attr("dy", ".35em")
-                            .style("text-anchor", "end")
-                            .text(function (d) { return d; })
-                            .style("font-size", 20)
-                            .style("font-weight", "bold")
-                            .style("fill", "black");
-                        })
-                      })
-                    })
-                  })
-                })
-                */
-              </script>
+                  
+                  if(y != null)
+                      y.style.display = "block";
+                      document.getElementById("radar_chart_2").style.display = "block";
+              }
+            }
+
+            
+                
+                  
+              </script>      
         </div>
       </div>
     </div>
