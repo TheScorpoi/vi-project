@@ -6,6 +6,7 @@ function changeChart() {
         if(y != null)
             y.style.display = "none";
             document.getElementById("mapTitle2").style.display = "none";
+        document.getElementById("mapclick").style.display = "block";
         x.style.display = "block";
         document.getElementById("mapTitle").style.display = "block";
         var x = document.getElementById("theme-select").value;
@@ -17,6 +18,7 @@ function changeChart() {
         }
     } else {
         x.style.display = "none";
+        document.getElementById("mapclick").style.display = "none";
         document.getElementById("mapTitle").style.display = "none";
         if(y != null)
             y.style.display = "block";
