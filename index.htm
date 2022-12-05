@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Mercator projection</title>
+	<title>EnergyData</title>
 	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.13.0/d3-legend.min.js"></script>
 	<script src="mapLegend.js"></script>
@@ -175,6 +175,10 @@
 <body>
 	<div class="float-container">
 		<div id="form" class="cont2">
+			<div class="cont2">
+				<h1>EnergyData</h1>
+				<h4>Consiga saber os dados mais importantes sobre a energia dos países da UE dos ultimos 30 anos.</h4>
+			</div>
 			<div id="dataSelect">
 				<h1>Selecionar tipo de dados</h1>
 				<label for="theme-select">Escolha um tema:</label>
@@ -223,6 +227,7 @@
 		</div>
 		<div id="container" class="cont1">
 			<h1 id="mapTitle"> Mapa da europa</h1>
+			<h1> Clique num determinado país para mais informações</h1>
 			<h1 id="mapTitle2" style="display: none;"> </h1>
 			<input type="checkbox" id="toggle" class="toggleCheckbox" onclick='changeChart()'/>
 			<label for="toggle" class='toggleContainer'>
