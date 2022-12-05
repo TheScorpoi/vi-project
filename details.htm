@@ -591,12 +591,12 @@
                   <div>Radar</div>
               </label>
             <div id="pie_chart_1"></div>
-            <div id="radar_chart_1" style="display: none;"></div>
+            <div id="radar_chart_1" style="display: none"></div>
 
           </div>
           <script>
             document.getElementById("legend1").innerHTML = "tep (tonelada equivalente de petróleo) - Milhares";
-
+            createChart1()
             // set the dimensions and margins of the graph
             var width = 600
             height = 300
@@ -710,16 +710,36 @@
             function changeChart1() {
               var x = document.getElementById("pie_chart_1");
               var y = document.getElementById("radar_chart_1");
+              console.log(y)
               if (x.style.display === "none") {
                 if(y != null)
                 y.style.display = "none";
-                document.getElementById("radar_chart_1").style.display = "none";
+                // document.getElementById("radar_chart_1").style.display = "none";
                 
                 document.getElementById("legend1").innerHTML = "tep (tonelada equivalente de petróleo) - Milhares";
                 x.style.display = "block";
-                document.getElementById("pie_chart_1").style.display = "block";
+                // document.getElementById("pie_chart_1").style.display = "block";
                 
-                      year = localStorage.getItem("year");
+                
+
+
+
+
+                  } else {
+                  x.style.display = "none";
+                  // document.getElementById("pie_chart_1").style.display = "none";
+
+                  document.getElementById("legend1").innerHTML = "Percentagem (%)";
+
+                  
+                  if(y != null)
+                      y.style.display = "block";
+                      // document.getElementById("radar_chart_1").style.display = "block";
+              }
+            }
+
+            function createChart1(){
+              year = localStorage.getItem("year");
 
                       var width = 300,
                           height = 300;
@@ -766,26 +786,11 @@
                             })
                         }); 
                         
-                        var svg = d3.select('body')
+                        var svg = d3.select('#radar_chart_1')
                             .selectAll('svg')
                             .append('svg')
                             .attr("width", width)
                             .attr("height", height);
-
-
-
-
-                  } else {
-                  x.style.display = "none";
-                  document.getElementById("pie_chart_1").style.display = "none";
-
-                  document.getElementById("legend1").innerHTML = "Percentagem (%)";
-
-                  
-                  if(y != null)
-                      y.style.display = "block";
-                      document.getElementById("radar_chart_1").style.display = "block";
-              }
             }
 
           </script>
@@ -805,7 +810,7 @@
           </div>
           <script>
             document.getElementById("legend2").innerText = "tep (tonelada equivalente de petróleo) - Milhares"
-
+            createChart2()
 
             // set the dimensions and margins of the graph
             var width = 300
@@ -925,7 +930,24 @@
 
                       document.getElementById("legend2").innerText = "tep (tonelada equivalente de petróleo) - Milhares"
 
-                      var width = 300,
+
+                  x.style.display = "block";
+                  document.getElementById("pie_chart_2").style.display = "block";
+
+
+                  } else {
+                  x.style.display = "none";
+                  document.getElementById("pie_chart_2").style.display = "none";
+                  document.getElementById("legend2").innerText = "Percentagem (%)"
+
+                  
+                  if(y != null)
+                      y.style.display = "block";
+                      document.getElementById("radar_chart_2").style.display = "block";
+              }
+            }
+            function createChart2(){
+              var width = 300,
                           height = 300;
 
                       // Config for the Radar chart
@@ -969,27 +991,11 @@
                             })
                         }); 
                         
-                        var svg = d3.select('body')
+                        var svg = d3.select('#radar_chart_2')
                             .selectAll('svg')
                             .append('svg')
                             .attr("width", width)
                             .attr("height", height);
-
-
-                  x.style.display = "block";
-                  document.getElementById("pie_chart_2").style.display = "block";
-
-
-                  } else {
-                  x.style.display = "none";
-                  document.getElementById("pie_chart_2").style.display = "none";
-                  document.getElementById("legend2").innerText = "Percentagem (%)"
-
-                  
-                  if(y != null)
-                      y.style.display = "block";
-                      document.getElementById("radar_chart_2").style.display = "block";
-              }
             }
 
             
