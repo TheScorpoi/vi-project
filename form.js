@@ -213,7 +213,7 @@ function changeMapColor(path) {
                 .attr("class", "legendLinear")
                 .attr("transform", function (d) {
                     var w = parseFloat(document.getElementById("container").clientWidth)-200;
-                    var h = parseFloat(document.getElementById("container").clientHeight) - 350;
+                    var h = parseFloat(document.getElementById("container").clientHeight) -450;
                     return "translate(" + w + "," + h + " )"
                 });
 
