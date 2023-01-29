@@ -1,13 +1,13 @@
 # vi-project
 
-https://products.aspose.com/cells/net/conversion/xlsx-to-json/
+## EnergyData
 
+O objetivo deste projeto é aplicar várias formas de visualização implementadas em d3.js de modo a mostrar dados sobre
+um dado tema, neste caso a Energia na União Europeia. É possível ver o consumo e a produção de energia por país, por setor
+e por pais. A importação e a exportação de energia em cada país. Fazer uma comparação entre os vários países aos longos dos
+anos, entre outras visualizações. O projeto tem 2 principais vistas, uma geral onde tem um mapa da europa e é apresentado
+os dados sobre cada país, e uma vista mais detalhada sobre cada país.
 
+## Produção
 
-https://observablehq.com/@d3/bar-chart-race
-https://bl.ocks.org/alandunning/4c36eb1abdb248de34c64f5672afd857
-
-legendas nos graficos
-confirmar unidades de medidas dos graficos
-ir buscar o nome do pais dinamicamente
-ao clicar no grafico ir para a pagina do pais
+O projeto pode ser consultado no seguinte [link](https://thescorpoi.github.io/vi-project/)
